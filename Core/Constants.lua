@@ -33,10 +33,11 @@ constants.defaults = {
 }
 
 constants.icon_texture = {
-	yellowButton = "Interface\\AddOns\\HandyNotes_LegionClassOrderHalls\\Images\\YellowButton",
-	mission = "Interface\\AddOns\\HandyNotes_LegionClassOrderHalls\\Images\\Mission",
-	portal = "Interface\\AddOns\\HandyNotes_LegionClassOrderHalls\\Images\\Portal",
+	yellowButton = "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\YellowButton",
+	mission = "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\Mission",
+	portal = "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\Portal",
+	skull = "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\Skull",
 }
 
 -- Define the default icon here
-constants.defaultIcon = constants.icon_texture["yellowButton"]
+constants.defaultIcon = constants.icon_texture["skull"]

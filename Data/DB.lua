@@ -99,6 +99,11 @@ DB.points = {
 		},
 	},
 	[mapFile(1146)] = { -- Cathedral of Eternal Night
+		[46609106] = {
+			level = 1,
+			type = "portal",
+			label = L["Entrance"],
+		},
 		-- Cathedral of Eternal Night: Infernal Dead
 		[59322101] = {
 			quest = 46868,
@@ -130,6 +135,93 @@ DB.points = {
 			level = 1,
 			npc = 108701,
 			label = L["Arcanist Malrodi"],
+		},
+	},
+	[mapFile(1067)] = { -- Darkheart Thicket
+		[36581548] = {
+			type = "portal",
+			label = L["Entrance"],
+		},
+		-- Darkheart Thicket: A Burden to Bear; no specific rare boss
+		-- Darkheart Thicket: Kudzilla
+		[38998510] = {
+			quest = 42743,
+			npc = 99362,
+			label = L["Kudzilla"],
+		},
+		-- Darkheart Thicket: Mythana
+		[26573661] = {
+			quest = 42714,
+			npc = 101641,
+			label = L["Mythana"],
+		},
+		-- Darkheart Thicket: Preserving the Preservers
+		[26711794] = {
+			quest = 42744,
+			npc = 108460,
+			label = L["Injured Preserver Druid"],
+			type = "yellowButton",
+		},
+		[31851984] = {
+			quest = 42744,
+			npc = 108460,
+			label = L["Injured Preserver Druid"],
+			type = "yellowButton",
+		},
+		[27303686] = {
+			quest = 42744,
+			npc = 108460,
+			label = L["Injured Preserver Druid"],
+			type = "yellowButton",
+		},
+		[38118485] = {
+			quest = 42744,
+			npc = 108460,
+			label = L["Injured Preserver Druid"],
+			type = "yellowButton",
+		},
+		[55762836] = {
+			quest = 42744,
+			npc = 108460,
+			label = L["Injured Preserver Druid"],
+			type = "yellowButton",
+		},
+		-- Darkheart Thicket: Rage Rot
+		[19532347] = {
+			quest = 42742,
+			npc = 101660,
+			label = L["Mythana"],
+		},
+	},
+	[mapFile(1046)] = { -- Eye of Azshara
+		[49278833] = {
+			type = "portal",
+			label = L["Entrance"],
+		},
+		-- Eye of Azshara: A Tough Shell
+		[87873459] = {
+			quest = 42723,
+			npc = 101467,
+			label = L["Jaggen-Ra"],
+		},
+		-- Eye of Azshara: Azsunian Pearls; objects in several locations
+		-- Eye of Azshara: Dread End
+		[26563071] = {
+			quest = 42746,
+			npc = 108543,
+			label = L["Dread Captain Thedon"],
+		},
+		-- Eye of Azshara: Slug It Out
+		[33304966] = {
+			quest = 42713,
+			npc = 91788,
+			label = L["Shellmaw"],
+		},
+		-- Eye of Azshara: Termination Claws
+		[40202920] = {
+			quest = 42712,
+			npc = 101411,
+			label = L["Gom Crabbar"],
 		},
 	},
 }
