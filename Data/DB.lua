@@ -303,4 +303,311 @@ DB.points = {
 			label = L["Shroudseeker"],
 		},
 	},
+	[mapFile(1065)] = { -- Neltharion's Lair
+		[89195472] = {
+			type = "portal",
+			label = L["Entrance"],
+		},
+		[88203756] = {
+			npc = 111746,
+			icon = "Interface\\MERCHANTFRAME\\UI-BuyBack-Icon",
+			label = L["Mushroom Merchant"],
+		},
+		-- Neltharion's Lair: Blighted Bat
+		[34768055] = {
+			quest = 41866,
+			npc = 103199,
+			label = L["Ragoul"],
+		},
+		-- Neltharion's Lair: Crystalline Crusher
+		[67648680] = {
+			quest = 41864,
+			npc = 103247,
+			label = L["Ultanok"],
+		},
+		-- Neltharion's Lair: Mother of Stone
+		[43231098] = {
+			quest = 41865,
+			npc = 103271,
+			label = L["Kraxa <Mother of Gnashers>"],
+		},
+		-- Neltharion's Lair: Neltharion's Treasure
+		[50315450] = {
+			quest = 41211,
+			object = 247348,
+			type = "yellowButton",
+			label = L["Neltharion's Treasure"],
+		},
+--[[		[59087550] = {
+			quest = 41211,
+			object = 247348,
+			type = "yellowButton",
+			label = L["Neltharion's Treasure"],
+		},
+		[57049857] = {
+			quest = 41211,
+			object = 247348,
+			type = "yellowButton",
+			label = L["Neltharion's Treasure"],
+		},]]
+		-- Neltharion's Lair: Stonedark Slaves
+		[53628118] = {
+			quest = 41857,
+			npc = 103597,
+			label = L["Understone Lasher"],
+		},
+	},
+	[mapFile(1115)] = { -- Return to Karazhan
+		-- entrance
+		[64086045] = {
+			level = 6, 
+			type = "portal",
+			label = L["Entrance"],
+		},
+		-- Soul Fragment
+		[27333631] = {
+			level = 4, 
+			quest = 44734,
+			npc = 115105,
+			type = "yellowButton",
+			label = L["Opera Hall Soul Fragment"],
+		},
+		[82032082] = {
+			level = 4, 
+			quest = 44734,
+			npc = 115013,
+			type = "yellowButton",
+			label = L["Guest Chambers Soul Fragment"],
+		},
+		[23606258] = {
+			level = 3, 
+			quest = 44734,
+			npc = 115103,
+			type = "yellowButton",
+			label = L["Banquet Hall Soul Fragment"],
+		},
+		[74352005] = {
+			level = 1, 
+			quest = 44734,
+			npc = 115101,
+			type = "yellowButton",
+			label = L["Servant Quarters Soul Fragment"],
+		},
+		[44717557] = {
+			level = 9, 
+			quest = 44734,
+			npc = 115113,
+			type = "yellowButton",
+			label = L["Menagerie Soul Fragment"],
+		},
+		-- portal
+		[75222055] = {
+			level = 1, 
+			type = "portal",
+			label = L["Portal"],
+		},
+		-- portal
+		[51397567] = {
+			level = 9, 
+			type = "portal",
+			label = L["Portal"],
+		},
+		[09252514] = {
+			level = 12, 
+			quest = 45238,
+			item = 143537,
+			icon = "Interface\\ICONS\\inv_misc_qirajicrystal_04",
+			label = L["Mana Focus"],
+		},
+		[10273322] = {
+			level = 12, 
+			type = "portal",
+			label = L["Portal"],
+		},
+	},
+	[mapFile(1079)] = { -- The Arcway
+		[47682114] = {
+			type = "portal",
+			label = L["Portal"],
+		},
+		[22176429] = {
+			quest = 42491,
+			item = 138394,
+			type = "yellowButton",
+			label = L["Suramar Leyline Map"],
+		},
+		-- The Arcway: Arcanist Down
+		[58165367] = {
+			quest = 43639,
+			npc = 111060,
+			label = L["Arcanist Naran"],
+		},
+		-- The Arcway: Clogged Drain
+		[47868145] = {
+			quest = 43637,
+			npc = 111021,
+			label = L["Sludge Face"],
+		},
+		-- The Arcway: Creeping Suspicions
+		-- The Arcway: Silver Serpent
+		[48004236] = {
+			quest = 43640,
+			npc = 111052,
+			label = L["Silver Serpent"],
+		},
+		-- The Arcway: Wandering Plague
+		[37934847] = {
+			quest = 43641,
+			npc = 111057,
+			label = L["The Rat King"],
+		},
+	},
+	[mapFile(1094)] = { -- The Emerald Nightmare
+	},
+	[mapFile(1088)] = { -- The Nighthold
+		[25508836] = {
+			level = 1,
+			type = "portal",
+			label = L["Portal"],
+		},
+		[55863583] = {
+			level = 3,
+			type = "portal",
+			label = L["Portal"],
+		},
+		[37016460] = {
+			level = 3,
+			type = "portal",
+			label = L["Portal"],
+		},
+		[48844650] = {
+			level = 3,
+			type = "portal",
+			label = L["Portal"],
+		},
+		[44105401] = {
+			level = 3,
+			type = "portal",
+			label = L["Portal"],
+		},
+		[29432304] = {
+			level = 7,
+			type = "portal",
+			label = L["Portal"],
+		},
+		-- The Nighthold: Creepy Crawlers
+		[48526454] = {
+			level = 2, 
+			quest = 44934,
+			npc = 116008,
+			label = L["Kar'zun"],
+		},
+		-- The Nighthold: Ettin Your Foot In The Door
+		[42796181] = {
+			level = 1, 
+			quest = 44932,
+			npc = 115914,
+			label = L["Torm the Brute"],
+		},
+		-- The Nighthold: Focused Power
+		[45034811] = {
+			level = 3, 
+			quest = 44937,
+			npc = 116395,
+			label = L["Nightwell Diviner"],
+		},
+		-- The Nighthold: Gilded Guardian
+		[47103015] = {
+			level = 2, 
+			quest = 44935,
+			npc = 112712,
+			label = L["Gilded Guardian <Spellblade's Construct>"],
+		},
+		-- The Nighthold: Love Tap
+--[[		[47103015] = { -- location unknown
+			level = 3, 
+			quest = 44938,
+			npc = 117240,
+			label = L["Wily Sycophant"],
+		},]]
+		-- The Nighthold: Seeds of Destruction
+		[57114732] = {
+			level = 4, 
+			quest = 44939,
+			npc = 115853,
+			label = L["Doomlash"],
+		},
+		-- The Nighthold: Supply Routes
+		[19655976] = {
+			level = 3, 
+			quest = 44936,
+			npc = 116004,
+			label = L["Flightmaster Volnath <Flight Master>"],
+		},
+		-- The Nighthold: Wailing In The Night
+		[38944374] = {
+			level = 1, 
+			quest = 44933,
+			npc = 115847,
+			label = L["Ariadne"],
+		},
+	},
+	[mapFile(1147)] = { -- Tomb of Sargeras
+	--[[
+		-- Tomb of Sargeras: Life After Death
+		[00000000] = { -- location unknown
+			level = 1, 
+			quest = 46506,
+			npc = 120019,
+			label = L["Ryul the Fading"],
+		},
+		-- Tomb of Sargeras: Lost But Not Forgotten
+		[00000000] = { -- location unknown
+			level = 1, 
+			quest = 46505,
+			npc = 120009,
+			label = L["Naisha"],
+		},
+		-- Tomb of Sargeras: The Dread Stalker
+		[00000000] = { -- location unknown
+			level = 1, 
+			quest = 46507,
+			npc = 120013,
+			label = L["The Dread Stalker"],
+		},
+	]]
+	},
+	[mapFile(1114)] = { -- Trial of Valor
+		-- no WQ here so far
+	},
+	[mapFile(1045)] = { -- Vault of the Wardens
+		[69087682] = {
+			level = 1,
+			type = "portal",
+			label = L["Portal"],
+		},
+		[46631642] = {
+			level = 2,
+			quest = 39341,
+			npc = 105824,
+			label = L["Grimoira <Devourer of Entrails>"],
+			note = L["Requires Skaggldrynk"],
+		},
+		[54633548] = {
+			level = 3,
+			quest = 44486,
+			object = 258979,
+			type = "yellowButton",
+			label = L["Fel-Ravaged Tome"],
+		},
+		-- Vault of the Wardens: A Grim Matter; items collecting
+		-- Vault of the Wardens: How'd He Get Up There?
+		[24282694] = {
+			level = 1, 
+			quest = 42926,
+			npc = 96579,
+			label = L["Frenzied Animus <Vortex, Arcane Enchanted, Dampening, Mortar, Lightning Enchanted>"],
+		},
+		-- Vault of the Wardens: Startup Sequence; no rare boss
+	},
 }
