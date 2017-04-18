@@ -224,4 +224,83 @@ DB.points = {
 			label = L["Gom Crabbar"],
 		},
 	},
+	[mapFile(1041)] = { -- Halls of Valor
+		[47580874] = {
+			level = 2,
+			type = "portal",
+			label = L["Entrance"],
+		},
+		[38907367] = {
+			level = 2,
+			type = "portal",
+			label = L["Portal"],
+		},
+		-- Halls of Valor: A Gift for Vethir; items inside halls of valor which should be a bit easy to be found
+		-- Halls of Valor: A Worthy Challenge
+		[47486741] = {
+			level = 2,
+			quest = 42241,
+			npc = 106320,
+			label = L["Volynd Stormbringer"],
+		},
+		-- Halls of Valor: Deeds of the Past; items inside halls of valor which should be a bit easy to be found
+		-- Halls of Valor: Ponderous Poaching
+		[24286477] = {
+			level = 1,
+			quest = 42240,
+			npc = 96647,
+			label = L["Earlnoc the Beastbreaker"],
+		},
+		-- Halls of Valor: The Bear King
+		[59016086] = {
+			level = 1,
+			quest = 42239,
+			npc = 99802,
+			label = L["Arthfael"],
+		},
+		-- Fenryr
+		[36033345] = {
+			level = 1,
+			npc = 99868,
+			label = L["Fenryr's western spawn point"],
+		},
+		[55856517] = {
+			level = 1,
+			npc = 99868,
+			label = L["Fenryr's eastern spawn point"],
+		},
+		[68732717] = {
+			level = 1,
+			type = "portal",
+			label = L["Portal"],
+		},
+	},
+	[mapFile(1042)] = { -- Maw of Souls
+		[46308458] = {
+			level = 1,
+			type = "portal",
+			label = L["Entrance"],
+		},
+		-- Maw of Souls: From Hell's Mouth
+		[45456606] = {
+			level = 2,
+			quest = 42780,
+			npc = 103045,
+			label = L["Plaguemaw"],
+		},
+		-- Maw of Souls: Menace of the Seas
+		[51785575] = {
+			level = 2,
+			quest = 42757,
+			npc = 108494,
+			label = L["Soulfiend Tagerma <Corruptor of the Seas>"],
+		},
+		-- Maw of Souls: Return of the Beast
+		[51846590] = {
+			level = 2,
+			quest = 42788,
+			npc = 103605,
+			label = L["Shroudseeker"],
+		},
+	},
 }
