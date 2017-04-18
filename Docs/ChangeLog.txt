@@ -3,12 +3,6 @@ $Id$
 Revision History:
 =================
 
-* v1.01 (Apr. 17, 2017)
------------------------
-- Added Tianji in Monk's order hall
-- Added node's notes
-- Added more options' toggling
-
-* v1.00 (Apr. 17, 2017)
+* v1.00 (Apr. xx, 2017)
 -----------------------
 - Initial version which support WoW 7.2.0

@@ -98,4 +98,38 @@ DB.points = {
 			label = L["Braxas the Fleshcarver"],
 		},
 	},
+	[mapFile(1146)] = { -- Cathedral of Eternal Night
+		-- Cathedral of Eternal Night: Infernal Dead
+		[59322101] = {
+			quest = 46868,
+			level = 1,
+			npc = 120715,
+			label = L["Raga'yut"],
+		},
+	},
+	[mapFile(1087)] = { -- Court of Stars
+		-- Court of Stars: Bring Me the Eyes
+		[57557573] = {
+			quest = 42769,
+			level = 1,
+			npc = 108740,
+			label = L["Velimar"],
+		},
+		-- Court of Stars: Disarming the Watch; no specific rare boss
+		-- Court of Stars: The Deceitful Student
+		[44854042] = {
+			quest = 42784,
+			level = 1,
+			npc = 108796,
+			label = L["Arcanist Malrodi"],
+		},
+		-- Court of Stars: They Bloom at Night; no specific rare boss
+		-- Court of Stars: Wraith in the Machine
+		[24991503] = {
+			quest = 42764,
+			level = 1,
+			npc = 108701,
+			label = L["Arcanist Malrodi"],
+		},
+	},
 }
