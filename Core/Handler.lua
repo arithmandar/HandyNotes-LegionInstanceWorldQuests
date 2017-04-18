@@ -1,0 +1,279 @@
+-- $Id$
+-----------------------------------------------------------------------
+-- Upvalued Lua API.
+-----------------------------------------------------------------------
+-- Functions
+local _G = getfenv(0)
+-- Libraries
+local string = _G.string;
+local format = string.format
+local gsub = string.gsub
+local next = next
+local wipe = wipe
+local GameTooltip = GameTooltip
+local WorldMapTooltip = WorldMapTooltip
+-- ----------------------------------------------------------------------------
+-- AddOn namespace.
+-- ----------------------------------------------------------------------------
+local FOLDER_NAME, private = ...
+
+local LibStub = _G.LibStub
+local L = LibStub("AceLocale-3.0"):GetLocale(private.addon_name)
+local LH = LibStub("AceLocale-3.0"):GetLocale("HandyNotes", false)
+local AceDB = LibStub("AceDB-3.0")
+
+local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes")
+local addon = LibStub("AceAddon-3.0"):NewAddon(private.addon_name, "AceEvent-3.0")
+addon.constants = private.constants;
+addon.constants.addon_name = private.addon_name;
+addon.Name = FOLDER_NAME;
+_G.HandyNotes_LegionClassOrderHalls = addon;
+
+-- //////////////////////////////////////////////////////////////////////////
+local cache_tooltip = CreateFrame("GameTooltip", private.addon_name.."_cacheToolTip", UIParent, "GameTooltipTemplate")
+local questTitle_cache
+local questComplete_cache
+
+function cache_tooltip:GetQuestTitle()
+	local questTitle = _G[private.addon_name.."_cacheToolTipTextLeft1"]:GetText()
+	--DEFAULT_CHAT_FRAME:AddMessage(self["message"]:format(questTitle))
+	self:SetScript("OnTooltipSetQuest", nil)
+	if (questTitle) then 
+		questTitle_cache = questTitle
+	end
+end
+
+-- activation code
+local function getQuestTitlebyID(id)
+	if IsQuestFlaggedCompleted(id) then
+		questComplete_cache = true
+	else
+		questComplete_cache = nil
+	end
+	cache_tooltip:SetOwner(UIParent, "ANCHOR_NONE")
+	cache_tooltip:SetScript("OnTooltipSetQuest", cache_tooltip.GetQuestTitle)
+	cache_tooltip:SetHyperlink("quest:" .. id)
+end
+-- //////////////////////////////////////////////////////////////////////////
+-- get creature's name from server
+local mcache_tooltip = CreateFrame("GameTooltip", private.addon_name.."_mcacheToolTip", UIParent, "GameTooltipTemplate")
+local creature_cache
+
+-- activation code
+local function getCreatureNamebyID(id)
+	mcache_tooltip:SetOwner(UIParent, "ANCHOR_NONE")
+	mcache_tooltip:SetHyperlink(("unit:Creature-0-0-0-0-%d"):format(id))
+	creature_cache = _G[private.addon_name.."_mcacheToolTipTextLeft1"]:GetText()
+end
+-- //////////////////////////////////////////////////////////////////////////
+local function work_out_texture(point)
+	if (point.type) then
+        return private.constants.icon_texture[point.type]
+	-- use the icon specified in point data
+	elseif (point.icon) then
+		return point.icon
+    else
+        return private.constants.defaultIcon
+    end
+end
+
+local get_point_info = function(point)
+    if point then
+        local label = point.label or UNKNOWN
+        local icon = work_out_texture(point)
+
+        return label, icon, point.scale
+    end
+end
+
+local get_point_info_by_coord = function(mapFile, coord)
+    mapFile = string.gsub(mapFile, "_terrain%d+$", "")
+    return get_point_info(private.DB.points[mapFile] and private.DB.points[mapFile][coord])
+end
+
+local function handle_tooltip(tooltip, point)
+	if point then
+		if point.npc then
+			getCreatureNamebyID(point.npc)
+		end
+		if point.label then
+			tooltip:AddLine(creature_cache or point.label)
+		end
+		if (point.note and private.db.show_note) then
+		    tooltip:AddLine(point.note, nil, nil, nil, true)
+		end
+		if (point.quest) then
+			getQuestTitlebyID(point.quest)
+			if (questTitle_cache) then
+				tooltip:SetHyperlink(("quest:%d[%%s]"):format(point.quest))
+				questTitle_cache = nil
+			else
+				tooltip:AddDoubleLine("QuestID", point.quest or UNKNOWN)
+			end
+		end
+	else
+		tooltip:SetText(UNKNOWN)
+	end
+	tooltip:Show()
+	creature_cache = nil
+end
+
+local handle_tooltip_by_coord = function(tooltip, mapFile, coord)
+    mapFile = string.gsub(mapFile, "_terrain%d+$", "")
+    return handle_tooltip(tooltip, private.DB.points[mapFile] and private.DB.points[mapFile][coord])
+end
+
+-- //////////////////////////////////////////////////////////////////////////
+local pluginHandler = {}
+local info = {}
+
+function pluginHandler:OnEnter(mapFile, coord)
+    local tooltip = self:GetParent() == WorldMapButton and WorldMapTooltip or GameTooltip
+    if ( self:GetCenter() > UIParent:GetCenter() ) then -- compare X coordinate
+        tooltip:SetOwner(self, "ANCHOR_LEFT")
+    else
+        tooltip:SetOwner(self, "ANCHOR_RIGHT")
+    end
+    handle_tooltip_by_coord(tooltip, mapFile, coord)
+end
+
+function pluginHandler:OnLeave(mapFile, coord)
+    if self:GetParent() == WorldMapButton then
+        WorldMapTooltip:Hide()
+    else
+        GameTooltip:Hide()
+    end
+end
+
+local function hideNode(button, mapFile, coord)
+    private.hidden[mapFile][coord] = true
+    addon:Refresh()
+end
+
+local function closeAllDropdowns()
+    CloseDropDownMenus(1)
+end
+
+local function addTomTomWaypoint(button, mapFile, coord)
+    if TomTom then
+        local mapId = HandyNotes:GetMapFiletoMapID(mapFile)
+        local x, y = HandyNotes:getXY(coord)
+        TomTom:AddMFWaypoint(mapId, nil, x, y, {
+            title = get_point_info_by_coord(mapFile, coord),
+            persistent = nil,
+            minimap = true,
+            world = true
+        })
+    end
+end
+
+do
+    local currentZone, currentCoord
+    local function generateMenu(button, level)
+        if (not level) then return end
+        wipe(info)
+        if (level == 1) then
+            -- Create the title of the menu
+            info.isTitle      = 1
+            info.text         = "HandyNotes - " ..L["PLUGIN_NAME"]
+            info.notCheckable = 1
+            UIDropDownMenu_AddButton(info, level)
+            wipe(info)
+
+            if TomTom then
+                -- Waypoint menu item
+                info.text = LH["Add this location to TomTom waypoints"]
+                info.notCheckable = 1
+                info.func = addTomTomWaypoint
+                info.arg1 = currentZone
+                info.arg2 = currentCoord
+                UIDropDownMenu_AddButton(info, level)
+                wipe(info)
+            end
+
+             -- Hide menu item
+            info.text         = HIDE 
+            info.notCheckable = 1
+            info.func         = hideNode
+            info.arg1         = currentZone
+            info.arg2         = currentCoord
+            UIDropDownMenu_AddButton(info, level)
+            wipe(info)
+
+           -- Close menu item
+            info.text         = CLOSE
+            info.func         = closeAllDropdowns
+            info.notCheckable = 1
+            UIDropDownMenu_AddButton(info, level)
+            wipe(info)
+        end
+    end
+    local HL_Dropdown = CreateFrame("Frame", private.addon_name.."DropdownMenu")
+    HL_Dropdown.displayMode = "MENU"
+    HL_Dropdown.initialize = generateMenu
+
+    function pluginHandler:OnClick(button, down, mapFile, coord)
+        if button == "RightButton" and not down then
+            currentZone = string.gsub(mapFile, "_terrain%d+$", "")
+            currentCoord = coord
+            ToggleDropDownMenu(1, nil, HL_Dropdown, self, 0, 0)
+        end
+    end
+end
+
+do
+    -- This is a custom iterator we use to iterate over every node in a given zone
+    local currentLevel, currentZone
+    local function iter(t, prestate)
+        if not t then return nil end
+        local state, value = next(t, prestate)
+        while state do -- Have we reached the end of this zone?
+            if value and private:ShouldShow(state, value, currentZone, currentLevel) then
+                local label, icon, scale = get_point_info(value)
+				scale = (scale or 1) * (icon and icon.scale or 1) * private.db.icon_scale
+                return state, nil, icon, scale, private.db.icon_alpha
+            end
+            state, value = next(t, state) -- Get next data
+        end
+        return nil, nil, nil, nil
+    end
+    function pluginHandler:GetNodes(mapFile, minimap, dungeonLevel)
+        currentLevel = dungeonLevel
+        mapFile = string.gsub(mapFile, "_terrain%d+$", "")
+        currentZone = mapFile
+        return iter, private.DB.points[mapFile], nil
+    end
+    function private:ShouldShow(coord, point, currentZone, currentLevel)
+		if private.hidden[currentZone] and private.hidden[currentZone][coord] then
+			return false
+		end
+        if point.level and point.level ~= currentLevel then
+            return false
+        end
+		-- this will check if any node is for specific class
+		if point.class and point.class ~= select(2, UnitClass("player")) then
+			return false
+		end
+        return true
+    end
+end
+
+-- //////////////////////////////////////////////////////////////////////////
+function addon:OnInitialize()
+	self.db = AceDB:New("HandyNotes_LegionClassOrderHallsDB", private.constants.defaults)
+	
+	private.db = self.db.profile
+	private.hidden = self.db.char.hidden
+
+    -- Initialize database with HandyNotes
+    HandyNotes:RegisterPluginDB(private.addon_name:gsub("HandyNotes_", ""), pluginHandler, private.config.options)
+end
+
+function addon:OnEnable()
+end
+
+function addon:Refresh()
+    self:SendMessage("HandyNotes_NotifyUpdate", private.addon_name:gsub("HandyNotes_", ""))
+end
+
+-- //////////////////////////////////////////////////////////////////////////

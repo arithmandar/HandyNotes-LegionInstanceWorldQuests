@@ -1,0 +1,11 @@
+package-as: HandyNotes_LegionInstanceWorldQuests
+
+manual-changelog:
+    filename: Docs/ChangeLog.txt
+    markup-type: plain
+    
+enable-nolib-creation: yes
+
+ignore:
+    - Images/PSD
+
