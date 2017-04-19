@@ -3,6 +3,10 @@ $Id$
 Revision History:
 =================
 
-* v1.00 (Apr. xx, 2017)
+* v1.00 (Apr. 19, 2017)
+-----------------------
+- Removed redundant line for LibBabble-SubZone-3.0 as not needed
+
+* v1.00 (Apr. 18, 2017)
 -----------------------
 - Initial version which support WoW 7.2.0
