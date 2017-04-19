@@ -197,6 +197,13 @@ DB.points = {
 			type = "portal",
 			label = L["Entrance"],
 		},
+		[62675812] = {
+			type = "yellowButton",
+			quest = 39331,
+			object = 248930,
+			item = 127873,
+			label = L["Crate of Corks"], -- pick up to get Advanced Corks
+		},
 		-- Eye of Azshara: A Tough Shell
 		[87873459] = {
 			quest = 42723,
@@ -261,12 +268,14 @@ DB.points = {
 		[36033345] = {
 			level = 1,
 			npc = 99868,
-			label = L["Fenryr's western spawn point"],
+			label = L["Fenryr"],
+			note = L["Fenryr's western spawn point"],
 		},
 		[55856517] = {
 			level = 1,
 			npc = 99868,
-			label = L["Fenryr's eastern spawn point"],
+			label = L["Fenryr"],
+			note = L["Fenryr's eastern spawn point"],
 		},
 		[68732717] = {
 			level = 1,
@@ -279,6 +288,11 @@ DB.points = {
 			level = 1,
 			type = "portal",
 			label = L["Entrance"],
+		},
+		[56922400] = {
+			level = 1, 
+			type = "portal",
+			label = L["Echoing Horn of the Damned"],
 		},
 		-- Maw of Souls: From Hell's Mouth
 		[45456606] = {
@@ -334,6 +348,7 @@ DB.points = {
 		[50315450] = {
 			quest = 41211,
 			object = 247348,
+			item = 138783, -- Glittering Memento
 			type = "yellowButton",
 			label = L["Neltharion's Treasure"],
 		},
@@ -367,35 +382,40 @@ DB.points = {
 		[27333631] = {
 			level = 4, 
 			quest = 44734,
-			npc = 115105,
+			--npc = 115105,
+			spell = 235422,
 			type = "yellowButton",
 			label = L["Opera Hall Soul Fragment"],
 		},
 		[82032082] = {
 			level = 4, 
 			quest = 44734,
-			npc = 115013,
+			--npc = 115013,
+			spell = 235418,
 			type = "yellowButton",
 			label = L["Guest Chambers Soul Fragment"],
 		},
 		[23606258] = {
 			level = 3, 
 			quest = 44734,
-			npc = 115103,
+			--npc = 115103,
+			spell = 235419,
 			type = "yellowButton",
 			label = L["Banquet Hall Soul Fragment"],
 		},
 		[74352005] = {
 			level = 1, 
 			quest = 44734,
-			npc = 115101,
+			--npc = 115101,
+			spell = 235421,
 			type = "yellowButton",
 			label = L["Servant Quarters Soul Fragment"],
 		},
 		[44717557] = {
 			level = 9, 
 			quest = 44734,
-			npc = 115113,
+			--npc = 115113,
+			spell = 235417,
 			type = "yellowButton",
 			label = L["Menagerie Soul Fragment"],
 		},

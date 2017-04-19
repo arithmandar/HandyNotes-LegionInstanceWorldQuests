@@ -97,25 +97,43 @@ local function handle_tooltip(tooltip, point)
 			getCreatureNamebyID(point.npc)
 		end
 		if point.label then
-			tooltip:AddLine(creature_cache or point.label)
-		end
-		if (point.note and private.db.show_note) then
-		    tooltip:AddLine(point.note, nil, nil, nil, true)
+			if (point.npc and private.db.query_server) then
+				getCreatureNamebyID(point.npc)
+				tooltip:AddLine(creature_cache or point.label)
+				creature_cache = nil
+			else
+				tooltip:AddLine(point.label)
+			end
 		end
 		if (point.quest) then
-			getQuestTitlebyID(point.quest)
-			if (questTitle_cache) then
-				tooltip:SetHyperlink(("quest:%d[%%s]"):format(point.quest))
-				questTitle_cache = nil
-			else
-				tooltip:AddDoubleLine("QuestID", point.quest or UNKNOWN)
+			if (private.db.query_server) then
+				getQuestTitlebyID(point.quest)
+				if (questTitle_cache) then
+					tooltip:SetHyperlink(("quest:%d[%%s]"):format(point.quest))
+					questTitle_cache = nil
+				end
 			end
+			tooltip:AddDoubleLine(L["QuestID"], point.quest or UNKNOWN, 0.5, 0.5, 1, 0.5, 0.5, 1)
+		end
+		if (point.item) then
+			local itemName = GetItemInfo(point.item)
+			if (itemName) then
+				tooltip:AddDoubleLine(ENCOUNTER_JOURNAL_ITEM, itemName, 1, 1, 1, 1, 1, 1)
+			end
+		end
+		if (point.spell) then
+			local spellName = GetSpellInfo(point.spell)
+			if (spellName) then
+				tooltip:AddLine(spellName, 1, 1, 1, true)
+			end
+		end
+		if (point.note and private.db.show_note) then
+			tooltip:AddLine(point.note, 1, 1, 1, true)
 		end
 	else
 		tooltip:SetText(UNKNOWN)
 	end
 	tooltip:Show()
-	creature_cache = nil
 end
 
 local handle_tooltip_by_coord = function(tooltip, mapFile, coord)

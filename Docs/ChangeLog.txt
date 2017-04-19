@@ -3,9 +3,16 @@ $Id$
 Revision History:
 =================
 
-* v1.00 (Apr. 19, 2017)
+* v1.01 (Apr. 19, 2017)
 -----------------------
 - Removed redundant line for LibBabble-SubZone-3.0 as not needed
+- Added to support item and spell info's retrieving
+- Corrected option's toggling
+- Fine-tuned tooltip's displaying
+- Added a few more nodes related to non-WQ quests
+- Localization update:
+  - Korean (yuk6196)
+  - German (pas06)
 
 * v1.00 (Apr. 18, 2017)
 -----------------------
