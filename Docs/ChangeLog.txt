@@ -3,6 +3,16 @@ $Id$
 Revision History:
 =================
 
+* v1.02 (Apr. xx, 2017)
+-----------------------
+- Added Alchemy quest item in quest of Neltharion's Lair: Potent Powder
+- Fixed ToC English title name
+- Localization update:
+  - French (Itzamna0000)
+  - Korean (yuk6196)
+  - Russian (BLizzatron)
+  - German (pas06)
+
 * v1.01 (Apr. 19, 2017)
 -----------------------
 - Removed redundant line for LibBabble-SubZone-3.0 as not needed

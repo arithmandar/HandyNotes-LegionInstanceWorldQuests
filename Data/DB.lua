@@ -14,21 +14,6 @@ local LibStub = _G.LibStub
 local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes")
 local L = LibStub("AceLocale-3.0"):GetLocale(private.addon_name);
 
-local function GetLocaleLibBabble(typ)
-	local rettab = {}
-	local tab = LibStub(typ):GetBaseLookupTable()
-	local loctab = LibStub(typ):GetUnstrictLookupTable()
-	for k,v in pairs(loctab) do
-		rettab[k] = v;
-	end
-	for k,v in pairs(tab) do
-		if not rettab[k] then
-			rettab[k] = v;
-		end
-	end
-	return rettab;
-end
-
 local function mapFile(mapID)
 	return HandyNotes:GetMapIDtoMapFile(mapID)
 end
@@ -325,6 +310,13 @@ DB.points = {
 			npc = 111746,
 			icon = "Interface\\MERCHANTFRAME\\UI-BuyBack-Icon",
 			label = L["Mushroom Merchant"],
+		},
+		[44084800] = {
+			quest = 39335,
+			type = "yellowButton",
+			item = 127874,
+			object = 249024,
+			label = L["Precipitating Powder"],
 		},
 		-- Neltharion's Lair: Blighted Bat
 		[34768055] = {
