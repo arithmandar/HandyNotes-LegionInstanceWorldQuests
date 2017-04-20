@@ -3,7 +3,7 @@ $Id$
 Revision History:
 =================
 
-* v1.02 (Apr. xx, 2017)
+* v1.02 (Apr. 21, 2017)
 -----------------------
 - Added Alchemy quest item in quest of Neltharion's Lair: Potent Powder
 - Fixed ToC English title name
