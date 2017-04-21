@@ -27,7 +27,7 @@ local addon = LibStub("AceAddon-3.0"):NewAddon(private.addon_name, "AceEvent-3.0
 addon.constants = private.constants;
 addon.constants.addon_name = private.addon_name;
 addon.Name = FOLDER_NAME;
-_G.HandyNotes_LegionClassOrderHalls = addon;
+_G.HandyNotes_LegionInstanceWorldQuests = addon;
 
 -- //////////////////////////////////////////////////////////////////////////
 local cache_tooltip = CreateFrame("GameTooltip", private.addon_name.."_cacheToolTip", UIParent, "GameTooltipTemplate")

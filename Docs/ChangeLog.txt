@@ -3,6 +3,10 @@ $Id$
 Revision History:
 =================
 
+* v1.03 (Apr. 22, 2017)
+-----------------------
+- Corrected addon parameter declaration
+
 * v1.02 (Apr. 21, 2017)
 -----------------------
 - Added Alchemy quest item in quest of Neltharion's Lair: Potent Powder
