@@ -19,19 +19,19 @@ private.config = config
 
 config.options = {
 	type = "group",
-	name = L["PLUGIN_NAME"],
-	desc = L["ADDON_DESC"],
+	name = addon.pluginName,
+	desc = addon.description,
 	get = function(info) return private.db[info[#info]] end,
 	set = function(info, v)
 		private.db[info[#info]] = v
-		addon:SendMessage("HandyNotes_NotifyUpdate", private.addon_name:gsub("HandyNotes_", ""))
+		addon:SendMessage("HandyNotes_NotifyUpdate", addon.pluginName)
 	end,
 	args = {
 		icon = {
 			type = "group",
 			name = L["Icon settings"],
 			inline = true,
-			order = 1,
+			order = 10,
 			args = {
 				desc = {
 					name = L["These settings control the look and feel of the icon."],
@@ -54,22 +54,35 @@ config.options = {
 				},
 			},
 		},
-		display = {
+--[[		display = {
 			type = "group",
 			name = L["What to display"],
 			inline = true,
-			order = 2,
+			order = 20,
+			args = {
+				desc = {
+					name = L["These settings control what type of icons to be displayed."],
+					type = "description",
+					order = 0,
+				},
+			},
+		},]]
+		plugin_config = {
+			type = "group",
+			name = L["AddOn Settings"],
+			inline = true,
+			order = 30,
 			args = {
 				query_server = {
 					type = "toggle",
-					name = L["QUERY"],
-					desc = L["QUERY_DESC"],
+					name = L["Query from server"],
+					desc = L["Send query request to server to lookup localized name. May be a little bit slower for the first time lookup but would be very fast once the name is found and cached."],
 					order = 10,
 				},
 				show_note = {
 					type = "toggle",
-					name = L["SHOWNOTE"],
-					desc = L["SHOWNOTE_DESC"],
+					name = L["Show note"],
+					desc = L["Show the node's additional notes when it's available."],
 					order = 11,
 				},
 				unhide = {

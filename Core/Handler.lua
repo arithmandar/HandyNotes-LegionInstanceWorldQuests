@@ -26,6 +26,11 @@ local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes")
 local addon = LibStub("AceAddon-3.0"):NewAddon(private.addon_name, "AceEvent-3.0")
 addon.constants = private.constants;
 addon.constants.addon_name = private.addon_name;
+
+addon.descName = L["HandyNotes - Legion Instance World Quests"]
+addon.description = L["Shows the World Quest related rare bosses' locations and quests in Legion instances."]
+addon.pluginName = L["Legion Instance World Quests"]
+
 addon.Name = FOLDER_NAME;
 _G.HandyNotes_LegionInstanceWorldQuests = addon;
 
@@ -281,14 +286,14 @@ function addon:OnInitialize()
 	private.hidden = self.db.char.hidden
 
 	-- Initialize database with HandyNotes
-	HandyNotes:RegisterPluginDB(private.addon_name:gsub("HandyNotes_", ""), pluginHandler, private.config.options)
+	HandyNotes:RegisterPluginDB(addon.pluginName, pluginHandler, private.config.options)
 end
 
 function addon:OnEnable()
 end
 
 function addon:Refresh()
-	self:SendMessage("HandyNotes_NotifyUpdate", private.addon_name:gsub("HandyNotes_", ""))
+	self:SendMessage("HandyNotes_NotifyUpdate", addon.pluginName)
 end
 
 -- //////////////////////////////////////////////////////////////////////////

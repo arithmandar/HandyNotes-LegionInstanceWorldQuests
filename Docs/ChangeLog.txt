@@ -3,6 +3,12 @@ $Id$
 Revision History:
 =================
 
+* v1.04 (Apr. xx, 2017)
+-----------------------
+- Re-organized config options
+- Standardize localization key style
+- Changed the registered name to HandyNotes
+
 * v1.03 (Apr. 22, 2017)
 -----------------------
 - Corrected addon parameter declaration
