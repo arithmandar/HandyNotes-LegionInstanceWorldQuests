@@ -34,10 +34,10 @@ constants.defaults = {
 
 constants.icon_texture = {
 	door = "Interface\\MINIMAP\\Suramar_Door_Icon",
-	yellowButton = "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\YellowButton",
-	mission = "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\Mission",
-	portal = "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\Portal",
-	skull = "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\Skull",
+	yellowButton 	= "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\YellowButton",
+	mission 	= "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\Mission",
+	portal 		= "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\Portal",
+	skull 		= "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\Skull",
 }
 
 -- Define the default icon here

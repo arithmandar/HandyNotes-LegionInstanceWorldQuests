@@ -98,19 +98,11 @@ end
 
 local function handle_tooltip(tooltip, point)
 	if point then
-		if (point.label) then
-			if (point.npc and private.db.query_server) then
-				getCreatureNamebyID(point.npc)
-				tooltip:AddLine(creature_cache or point.label)
-				creature_cache = nil
-			else
-				tooltip:AddLine(point.label)
-			end
-		end
 		if (point.quest) then
 			if (private.db.query_server) then
 				getQuestTitlebyID(point.quest)
 				if (questTitle_cache) then
+--					tooltip:AddLine(QUESTS_COLON..questTitle_cache, 1, 1, 1)
 					tooltip:SetHyperlink(("quest:%d[%%s]"):format(point.quest))
 					questTitle_cache = nil
 				end
@@ -120,10 +112,23 @@ local function handle_tooltip(tooltip, point)
 				tooltip:AddLine(ERR_QUEST_ALREADY_DONE, 0, 1, 0)
 			end
 		end
+		if (point.label and not point.item) then -- skip when item ID is available, this is because we can get item's localized name so we don't need to use the lable
+			if (point.npc and private.db.query_server) then
+				getCreatureNamebyID(point.npc)
+				tooltip:AddLine(creature_cache or point.label)
+				creature_cache = nil
+			else
+				tooltip:AddLine(point.label)
+			end
+		end
 		if (point.item) then
 			local itemName = GetItemInfo(point.item)
 			if (itemName) then
-				tooltip:AddDoubleLine(ENCOUNTER_JOURNAL_ITEM, itemName, 1, 1, 1, 1, 1, 1)
+				if (point.quest) then
+					tooltip:AddDoubleLine(ITEM_BIND_QUEST, itemName, 1, 1, 1, 1, 1, 1)
+				else
+					tooltip:AddDoubleLine(ENCOUNTER_JOURNAL_ITEM, itemName, 1, 1, 1, 1, 1, 1)
+				end
 			end
 		end
 		if (point.spell) then

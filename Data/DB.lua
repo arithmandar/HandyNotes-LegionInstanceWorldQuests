@@ -129,7 +129,19 @@ DB.points = {
 			npc = 111068,
 			label = L["Archmage Galeorn"],
 		},
-		-- Black Rook Hold: The Sorrow. No specific rare boss
+		-- Black Rook Hold: The Sorrow
+		[55367962] = {
+			quest = 43642,
+			level = 1, 
+			npc = 110993,
+			label = L["General Tel'arn"],
+		},
+		[57898002] = {
+			quest = 43642,
+			level = 1, 
+			npc = 110995,
+			label = L["Ranger General Feleor"],
+		},
 		-- Black Rook Hold: Traitor's Demise
 		[65636935] = {
 			quest = 43762,

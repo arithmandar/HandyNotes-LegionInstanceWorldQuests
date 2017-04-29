@@ -3,7 +3,7 @@ $Id$
 Revision History:
 =================
 
-* v1.04 (Apr. xx, 2017)
+* v1.04 (Apr. 30, 2017)
 -----------------------
 - Re-organized config options
 - Standardize localization key style
@@ -14,6 +14,8 @@ Revision History:
   - Sabelite Sulfate, Alchemy quest item of quest Black Rook Hold: Heavy, But Helpful
 - Added feature to show achievement details
 - Added feature to show the status of quest's completion for quest item's hovering
+- Added WQ Black Rook Hold: The Sorrow's mobs
+- Adjusted tooltip's displaying while quest info is available (from cache)
 - Localization update:
   - German (pas06)
   - Korean (yuk6196)
