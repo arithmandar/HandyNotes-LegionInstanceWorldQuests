@@ -8,6 +8,15 @@ Revision History:
 - Re-organized config options
 - Standardize localization key style
 - Changed the registered name to HandyNotes
+- Added new nodes to Black Rook Hold:
+  - Mob: Lord Etheldrin Ravencrest
+  - Objects of Achievement - You Used to Scrawl Me In Your Fel Tome
+  - Sabelite Sulfate, Alchemy quest item of quest Black Rook Hold: Heavy, But Helpful
+- Added feature to show achievement details
+- Added feature to show the status of quest's completion for quest item's hovering
+- Localization update:
+  - German (pas06)
+  - Korean (yuk6196)
 
 * v1.03 (Apr. 22, 2017)
 -----------------------

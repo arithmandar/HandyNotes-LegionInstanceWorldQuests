@@ -42,6 +42,13 @@ L["Entrance"] = "入口"
 L["Portal"] = "傳送門"
 L["QuestID"] = "任務代號"
 
+-- Black Rook Hold
+L["Torn Page"] = "撕開的書頁"
+L["Dog-Eared Page"] = "折頁的書頁"
+L["Worn-Edged Page"] = "邊緣磨損的書頁"
+L["Singed Page"] = "燒焦的書頁"
+L["Ink-splattered Page"] = "濺到墨水的書頁"
+L["Hastily-Scrawled Page"] = "飛快潦草的書頁"
 -- Halls of Valor
 L["Fenryr's western spawn point"] = "芬里爾的西邊出現點"
 L["Fenryr's eastern spawn point"] = "芬里爾的東邊出現點"

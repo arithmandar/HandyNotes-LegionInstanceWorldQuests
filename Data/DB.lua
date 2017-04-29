@@ -47,11 +47,74 @@ DB.points = {
 			npc = 98538,
 			label = L["Lady Velandras Ravencrest"],
 		},
+		[51033568] = {
+			level = 1,
+			npc = 98521,
+			label = L["Lord Etheldrin Ravencrest"],
+		},
 		[56292498] = {
 			level = 3,
 			npc = 112725,
 			label = L["Kalyndras <Rook's Quartermaster>"],
 		},
+		-- Achievement: You Used to Scrawl Me In Your Fel Tome, ID:10709
+		[52818472] = {
+			level = 1,
+			object = 252385,
+			achievement = 10709,
+			criteria = 31357,
+			label = L["Torn Page"],
+			type = "yellowButton",
+		},
+		[32295185] = {
+			level = 2,
+			object = 252387,
+			achievement = 10709,
+			criteria = 31359,
+			label = L["Dog-Eared Page"],
+			type = "yellowButton",
+		},
+		[56234193] = {
+			level = 2,
+			object = 252386,
+			achievement = 10709,
+			criteria = 31358,
+			label = L["Worn-Edged Page"],
+			type = "yellowButton",
+		},
+		[51514897] = {
+			level = 3,
+			object = 252388,
+			achievement = 10709,
+			criteria = 31360,
+			label = L["Singed Page"],
+			type = "yellowButton",
+		},
+		[46665929] = {
+			level = 5,
+			object = 252390,
+			achievement = 10709,
+			criteria = 31361,
+			label = L["Ink-splattered Page"],
+			type = "yellowButton",
+		},
+		[70967389] = {
+			level = 5,
+			object = 252391,
+			achievement = 10709,
+			criteria = 31362,
+			label = L["Hastily-Scrawled Page"],
+			type = "yellowButton",
+		},
+		-- Black Rook Hold: Heavy, But Helpful
+		[16565833] = {
+			level = 3,
+			quest = 39349,
+			item = 136812,
+			label = L["Sabelite Sulfate"],
+			type = "yellowButton",
+		},
+		
 		-- Black Rook Hold: ... With Fire!
 		[70008486] = {
 			quest = 43711,

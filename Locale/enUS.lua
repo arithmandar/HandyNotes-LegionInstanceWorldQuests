@@ -41,6 +41,13 @@ L["Entrance"] = "Entrance"
 L["Portal"] = "Portal"
 L["QuestID"] = "QuestID"
 
+-- Black Rook Hold
+L["Torn Page"] = "Torn Page"
+L["Dog-Eared Page"] = "Dog-Eared Page"
+L["Worn-Edged Page"] = "Worn-Edged Page"
+L["Singed Page"] = "Singed Page"
+L["Ink-splattered Page"] = "Ink-splattered Page"
+L["Hastily-Scrawled Page"] = "Hastily-Scrawled Page"
 -- Halls of Valor
 L["Fenryr's western spawn point"] = "Fenryr's western spawn point"
 L["Fenryr's eastern spawn point"] = "Fenryr's eastern spawn point"

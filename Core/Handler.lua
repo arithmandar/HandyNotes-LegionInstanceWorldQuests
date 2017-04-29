@@ -98,7 +98,7 @@ end
 
 local function handle_tooltip(tooltip, point)
 	if point then
-		if point.label then
+		if (point.label) then
 			if (point.npc and private.db.query_server) then
 				getCreatureNamebyID(point.npc)
 				tooltip:AddLine(creature_cache or point.label)
@@ -116,6 +116,9 @@ local function handle_tooltip(tooltip, point)
 				end
 			end
 			tooltip:AddDoubleLine(L["QuestID"], point.quest or UNKNOWN, 0.5, 0.5, 1, 0.5, 0.5, 1)
+			if (IsQuestFlaggedCompleted(point.quest)) then
+				tooltip:AddLine(ERR_QUEST_ALREADY_DONE, 0, 1, 0)
+			end
 		end
 		if (point.item) then
 			local itemName = GetItemInfo(point.item)
@@ -127,6 +130,45 @@ local function handle_tooltip(tooltip, point)
 			local spellName = GetSpellInfo(point.spell)
 			if (spellName) then
 				tooltip:AddLine(spellName, 1, 1, 1, true)
+			end
+		end
+		if (point.achievement) then
+			local _, name, _, completed, month, day, year, description, _, _, _, _, _, earnedBy = GetAchievementInfo(point.achievement);
+			tooltip:AddLine(BATTLE_PET_SOURCE_6..HEADER_COLON..name, 1, 1, 1)
+			if (point.criteria) then
+				local tooltiptext = description
+				local numCriteria = GetAchievementNumCriteria(point.achievement)
+				if (numCriteria and numCriteria > 0) then
+					for i = 1, numCriteria do
+						-- criteriaString, criteriaType, completed, quantity, reqQuantity, charName, flags, assetID, quantityString, criteriaID, eligible =  GetAchievementCriteriaInfo(achievementID, criteriaIndex)
+						local criteriaString, criteriaType, criteriaCompleted, quantity, reqQuantity, _, flags, assetID, quantityString = GetAchievementCriteriaInfo(point.achievement, i);
+						if (criteriaType == CRITERIA_TYPE_ACHIEVEMENT and assetID) then
+							local _, aname, _, acompleted = GetAchievementInfo(assetID);
+							if (acompleted) then
+								tooltiptext = tooltiptext.."\n|CFFFFFFFF - "..aname;
+							else
+								tooltiptext = tooltiptext.."\n|CFF808080 - "..aname;
+							end
+						--elseif (criteriaString == "" or reqQuantity > 1) then
+						elseif (bit.band(flags, EVALUATION_TREE_FLAG_PROGRESS_BAR) == EVALUATION_TREE_FLAG_PROGRESS_BAR) then
+							if (quantity >= reqQuantity) then
+								tooltiptext = tooltiptext.."\n|CFFFFFFFF - "..quantityString;
+							else
+								tooltiptext = tooltiptext.."\n|CFF808080 - "..quantityString;
+							end
+						else
+							if (criteriaCompleted) then
+								tooltiptext = tooltiptext.."\n|CFFFFFFFF - "..criteriaString;
+							else
+								tooltiptext = tooltiptext.."\n|CFF808080 - "..criteriaString;
+							end
+						end
+					end
+				end
+				tooltip:AddLine(tooltiptext)
+			end
+			if (completed) then
+				tooltip:AddLine(format(ACHIEVEMENT_TOOLTIP_COMPLETE, earnedBy, month, day, year), 0, 1, 0)
 			end
 		end
 		if (point.note and private.db.show_note) then
