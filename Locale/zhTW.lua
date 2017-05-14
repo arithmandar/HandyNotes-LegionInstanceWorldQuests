@@ -57,5 +57,5 @@ L["Echoing Horn of the Damned"] = "遭譴者回音號角";
 -- Vault of the Wardens
 L["Requires Skaggldrynk"] = "需要斯卡格藥劑"
 --@end-do-not-package@
---@localization(locale="zhTW", format="lua_additive_table")@
+--@localization(locale="zhTW", format="lua_additive_table", handle-subnamespaces="none", handle-unlocalized="ignore", namespace="")@
 end

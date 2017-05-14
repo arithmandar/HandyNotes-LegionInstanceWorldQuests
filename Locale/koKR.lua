@@ -7,5 +7,5 @@ if not L then return end
 if L then
 --@do-not-package@
 --@end-do-not-package@
---@localization(locale="koKR", format="lua_additive_table")@
+--@localization(locale="koKR", format="lua_additive_table", handle-subnamespaces="none", handle-unlocalized="ignore", namespace="")@
 end

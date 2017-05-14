@@ -38,6 +38,7 @@
 ## X-License: GPLv2
 ## X-Category: Map
 
+Libs\Libs.xml
 Locale\Locales.xml
 Core\Constants.lua
 Core\Handler.lua

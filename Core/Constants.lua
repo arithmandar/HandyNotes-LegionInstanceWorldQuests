@@ -13,6 +13,9 @@ private.addon_name = "HandyNotes_LegionInstanceWorldQuests"
 
 local LibStub = _G.LibStub
 local L = LibStub("AceLocale-3.0"):GetLocale(private.addon_name)
+private.descName = L["HandyNotes - Legion Instance World Quests"]
+private.description = L["Shows the World Quest related rare bosses' locations and quests in Legion instances."]
+private.pluginName = L["Legion Instance World Quests"]
 
 local constants = {}
 private.constants = constants
@@ -34,10 +37,15 @@ constants.defaults = {
 
 constants.icon_texture = {
 	door = "Interface\\MINIMAP\\Suramar_Door_Icon",
-	yellowButton 	= "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\YellowButton",
-	mission 	= "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\Mission",
-	portal 		= "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\Portal",
-	skull 		= "Interface\\AddOns\\HandyNotes_LegionInstanceWorldQuests\\Images\\Skull",
+	yellowButton 	= {
+		icon = "Interface\\MINIMAP\\OBJECTICONS",
+		tCoordLeft = 0.125, tCoordRight = 0.25, tCoordTop = 0.5, tCoordBottom = 0.625 },
+	portal 		= {
+		icon = "Interface\\MINIMAP\\OBJECTICONS",
+		tCoordLeft = 0.125, tCoordRight = 0.25, tCoordTop = 0.875, tCoordBottom = 1 },
+	skull 		= {
+		icon = "Interface\\MINIMAP\\OBJECTICONS",
+		tCoordLeft = 0.875, tCoordRight = 1, tCoordTop = 0.75, tCoordBottom = 0.875 },
 }
 
 -- Define the default icon here

@@ -27,7 +27,7 @@ DB.points = {
 	[mapFile] = { -- "_terrain1" etc will be stripped from attempts to fetch this
 		[coord] = {
 			quest=[number],		-- quest ID if available
-			level=[number], 	-- dungeonLevel if needed
+			dungeonLevel=[number], 	-- dungeondungeonLevel if needed
 			npc=[id], 		-- related npc id, used to display names in tooltip
 			label=[string], 	-- label: text that'll be the label
 			note=[string],		-- additional notes for this node
@@ -38,28 +38,28 @@ DB.points = {
 	},
 	[mapFile(1081)] = { -- Black Rook Hold
 		[29200647] = {
-			level = 1,
+			dungeonLevel = 1,
 			type = "portal",
 			label = L["Entrance"],
 		},
 		[18883767] = {
-			level = 1,
+			dungeonLevel = 1,
 			npc = 98538,
 			label = L["Lady Velandras Ravencrest"],
 		},
 		[51033568] = {
-			level = 1,
+			dungeonLevel = 1,
 			npc = 98521,
 			label = L["Lord Etheldrin Ravencrest"],
 		},
 		[56292498] = {
-			level = 3,
+			dungeonLevel = 3,
 			npc = 112725,
 			label = L["Kalyndras <Rook's Quartermaster>"],
 		},
 		-- Achievement: You Used to Scrawl Me In Your Fel Tome, ID:10709
 		[52818472] = {
-			level = 1,
+			dungeonLevel = 1,
 			object = 252385,
 			achievement = 10709,
 			criteria = 31357,
@@ -67,7 +67,7 @@ DB.points = {
 			type = "yellowButton",
 		},
 		[32295185] = {
-			level = 2,
+			dungeonLevel = 2,
 			object = 252387,
 			achievement = 10709,
 			criteria = 31359,
@@ -75,7 +75,7 @@ DB.points = {
 			type = "yellowButton",
 		},
 		[56234193] = {
-			level = 2,
+			dungeonLevel = 2,
 			object = 252386,
 			achievement = 10709,
 			criteria = 31358,
@@ -83,7 +83,7 @@ DB.points = {
 			type = "yellowButton",
 		},
 		[51514897] = {
-			level = 3,
+			dungeonLevel = 3,
 			object = 252388,
 			achievement = 10709,
 			criteria = 31360,
@@ -91,7 +91,7 @@ DB.points = {
 			type = "yellowButton",
 		},
 		[46665929] = {
-			level = 5,
+			dungeonLevel = 5,
 			object = 252390,
 			achievement = 10709,
 			criteria = 31361,
@@ -99,7 +99,7 @@ DB.points = {
 			type = "yellowButton",
 		},
 		[70967389] = {
-			level = 5,
+			dungeonLevel = 5,
 			object = 252391,
 			achievement = 10709,
 			criteria = 31362,
@@ -108,7 +108,7 @@ DB.points = {
 		},
 		-- Black Rook Hold: Heavy, But Helpful
 		[16565833] = {
-			level = 3,
+			dungeonLevel = 3,
 			quest = 39349,
 			item = 136812,
 			label = L["Sabelite Sulfate"],
@@ -118,55 +118,55 @@ DB.points = {
 		-- Black Rook Hold: ... With Fire!
 		[70008486] = {
 			quest = 43711,
-			level = 1,
+			dungeonLevel = 1,
 			npc = 98637,
 			label = L["Ancient Widow"],
 		},
 		-- Black Rook Hold: The Mad Arcanist
 		[37096265] = {
 			quest = 43712,
-			level = 2,
+			dungeonLevel = 2,
 			npc = 111068,
 			label = L["Archmage Galeorn"],
 		},
 		-- Black Rook Hold: The Sorrow
 		[55367962] = {
 			quest = 43642,
-			level = 1, 
+			dungeonLevel = 1, 
 			npc = 110993,
 			label = L["General Tel'arn"],
 		},
 		[57898002] = {
 			quest = 43642,
-			level = 1, 
+			dungeonLevel = 1, 
 			npc = 110995,
 			label = L["Ranger General Feleor"],
 		},
 		-- Black Rook Hold: Traitor's Demise
 		[65636935] = {
 			quest = 43762,
-			level = 5, 
+			dungeonLevel = 5, 
 			npc = 111361,
 			label = L["Kelorn Nightblade"],
 		},
 		-- Black Rook Hold: Worst of the Worst
 		[30306741] = {
 			quest = 43714,
-			level = 3,
+			dungeonLevel = 3,
 			npc = 111290,
 			label = L["Braxas the Fleshcarver"],
 		},
 	},
 	[mapFile(1146)] = { -- Cathedral of Eternal Night
 		[46609106] = {
-			level = 1,
+			dungeonLevel = 1,
 			type = "portal",
 			label = L["Entrance"],
 		},
 		-- Cathedral of Eternal Night: Infernal Dead
 		[59322101] = {
 			quest = 46868,
-			level = 1,
+			dungeonLevel = 1,
 			npc = 120715,
 			label = L["Raga'yut"],
 		},
@@ -175,7 +175,7 @@ DB.points = {
 		-- Court of Stars: Bring Me the Eyes
 		[57557573] = {
 			quest = 42769,
-			level = 1,
+			dungeonLevel = 1,
 			npc = 108740,
 			label = L["Velimar"],
 		},
@@ -183,7 +183,7 @@ DB.points = {
 		-- Court of Stars: The Deceitful Student
 		[44854042] = {
 			quest = 42784,
-			level = 1,
+			dungeonLevel = 1,
 			npc = 108796,
 			label = L["Arcanist Malrodi"],
 		},
@@ -191,7 +191,7 @@ DB.points = {
 		-- Court of Stars: Wraith in the Machine
 		[24991503] = {
 			quest = 42764,
-			level = 1,
+			dungeonLevel = 1,
 			npc = 108701,
 			label = L["Arcanist Malrodi"],
 		},
@@ -292,19 +292,19 @@ DB.points = {
 	},
 	[mapFile(1041)] = { -- Halls of Valor
 		[47580874] = {
-			level = 2,
+			dungeonLevel = 2,
 			type = "portal",
 			label = L["Entrance"],
 		},
 		[38907367] = {
-			level = 2,
+			dungeonLevel = 2,
 			type = "portal",
 			label = L["Portal"],
 		},
 		-- Halls of Valor: A Gift for Vethir; items inside halls of valor which should be a bit easy to be found
 		-- Halls of Valor: A Worthy Challenge
 		[47486741] = {
-			level = 2,
+			dungeonLevel = 2,
 			quest = 42241,
 			npc = 106320,
 			label = L["Volynd Stormbringer"],
@@ -312,65 +312,65 @@ DB.points = {
 		-- Halls of Valor: Deeds of the Past; items inside halls of valor which should be a bit easy to be found
 		-- Halls of Valor: Ponderous Poaching
 		[24286477] = {
-			level = 1,
+			dungeonLevel = 1,
 			quest = 42240,
 			npc = 96647,
 			label = L["Earlnoc the Beastbreaker"],
 		},
 		-- Halls of Valor: The Bear King
 		[59016086] = {
-			level = 1,
+			dungeonLevel = 1,
 			quest = 42239,
 			npc = 99802,
 			label = L["Arthfael"],
 		},
 		-- Fenryr
 		[36033345] = {
-			level = 1,
+			dungeonLevel = 1,
 			npc = 99868,
 			label = L["Fenryr"],
 			note = L["Fenryr's western spawn point"],
 		},
 		[55856517] = {
-			level = 1,
+			dungeonLevel = 1,
 			npc = 99868,
 			label = L["Fenryr"],
 			note = L["Fenryr's eastern spawn point"],
 		},
 		[68732717] = {
-			level = 1,
+			dungeonLevel = 1,
 			type = "portal",
 			label = L["Portal"],
 		},
 	},
 	[mapFile(1042)] = { -- Maw of Souls
 		[46308458] = {
-			level = 1,
+			dungeonLevel = 1,
 			type = "portal",
 			label = L["Entrance"],
 		},
 		[56922400] = {
-			level = 1, 
+			dungeonLevel = 1, 
 			type = "portal",
 			label = L["Echoing Horn of the Damned"],
 		},
 		-- Maw of Souls: From Hell's Mouth
 		[45456606] = {
-			level = 2,
+			dungeonLevel = 2,
 			quest = 42780,
 			npc = 103045,
 			label = L["Plaguemaw"],
 		},
 		-- Maw of Souls: Menace of the Seas
 		[51785575] = {
-			level = 2,
+			dungeonLevel = 2,
 			quest = 42757,
 			npc = 108494,
 			label = L["Soulfiend Tagerma <Corruptor of the Seas>"],
 		},
 		-- Maw of Souls: Return of the Beast
 		[51846590] = {
-			level = 2,
+			dungeonLevel = 2,
 			quest = 42788,
 			npc = 103605,
 			label = L["Shroudseeker"],
@@ -441,13 +441,13 @@ DB.points = {
 	[mapFile(1115)] = { -- Return to Karazhan
 		-- entrance
 		[64086045] = {
-			level = 6, 
+			dungeonLevel = 6, 
 			type = "portal",
 			label = L["Entrance"],
 		},
 		-- Soul Fragment
 		[27333631] = {
-			level = 4, 
+			dungeonLevel = 4, 
 			quest = 44734,
 			--npc = 115105,
 			spell = 235422,
@@ -455,7 +455,7 @@ DB.points = {
 			label = L["Opera Hall Soul Fragment"],
 		},
 		[82032082] = {
-			level = 4, 
+			dungeonLevel = 4, 
 			quest = 44734,
 			--npc = 115013,
 			spell = 235418,
@@ -463,7 +463,7 @@ DB.points = {
 			label = L["Guest Chambers Soul Fragment"],
 		},
 		[23606258] = {
-			level = 3, 
+			dungeonLevel = 3, 
 			quest = 44734,
 			--npc = 115103,
 			spell = 235419,
@@ -471,7 +471,7 @@ DB.points = {
 			label = L["Banquet Hall Soul Fragment"],
 		},
 		[74352005] = {
-			level = 1, 
+			dungeonLevel = 1, 
 			quest = 44734,
 			--npc = 115101,
 			spell = 235421,
@@ -479,7 +479,7 @@ DB.points = {
 			label = L["Servant Quarters Soul Fragment"],
 		},
 		[44717557] = {
-			level = 9, 
+			dungeonLevel = 9, 
 			quest = 44734,
 			--npc = 115113,
 			spell = 235417,
@@ -488,25 +488,25 @@ DB.points = {
 		},
 		-- portal
 		[75222055] = {
-			level = 1, 
+			dungeonLevel = 1, 
 			type = "portal",
 			label = L["Portal"],
 		},
 		-- portal
 		[51397567] = {
-			level = 9, 
+			dungeonLevel = 9, 
 			type = "portal",
 			label = L["Portal"],
 		},
 		[09252514] = {
-			level = 12, 
+			dungeonLevel = 12, 
 			quest = 45238,
 			item = 143537,
 			icon = "Interface\\ICONS\\inv_misc_qirajicrystal_04",
 			label = L["Mana Focus"],
 		},
 		[10273322] = {
-			level = 12, 
+			dungeonLevel = 12, 
 			type = "portal",
 			label = L["Portal"],
 		},
@@ -552,87 +552,87 @@ DB.points = {
 	},
 	[mapFile(1088)] = { -- The Nighthold
 		[25508836] = {
-			level = 1,
+			dungeonLevel = 1,
 			type = "portal",
 			label = L["Portal"],
 		},
 		[55863583] = {
-			level = 3,
+			dungeonLevel = 3,
 			type = "portal",
 			label = L["Portal"],
 		},
 		[37016460] = {
-			level = 3,
+			dungeonLevel = 3,
 			type = "portal",
 			label = L["Portal"],
 		},
 		[48844650] = {
-			level = 3,
+			dungeonLevel = 3,
 			type = "portal",
 			label = L["Portal"],
 		},
 		[44105401] = {
-			level = 3,
+			dungeonLevel = 3,
 			type = "portal",
 			label = L["Portal"],
 		},
 		[29432304] = {
-			level = 7,
+			dungeonLevel = 7,
 			type = "portal",
 			label = L["Portal"],
 		},
 		-- The Nighthold: Creepy Crawlers
 		[48526454] = {
-			level = 2, 
+			dungeonLevel = 2, 
 			quest = 44934,
 			npc = 116008,
 			label = L["Kar'zun"],
 		},
 		-- The Nighthold: Ettin Your Foot In The Door
 		[42796181] = {
-			level = 1, 
+			dungeonLevel = 1, 
 			quest = 44932,
 			npc = 115914,
 			label = L["Torm the Brute"],
 		},
 		-- The Nighthold: Focused Power
 		[45034811] = {
-			level = 3, 
+			dungeonLevel = 3, 
 			quest = 44937,
 			npc = 116395,
 			label = L["Nightwell Diviner"],
 		},
 		-- The Nighthold: Gilded Guardian
 		[47103015] = {
-			level = 2, 
+			dungeonLevel = 2, 
 			quest = 44935,
 			npc = 112712,
 			label = L["Gilded Guardian <Spellblade's Construct>"],
 		},
 		-- The Nighthold: Love Tap
 --[[		[47103015] = { -- location unknown
-			level = 3, 
+			dungeonLevel = 3, 
 			quest = 44938,
 			npc = 117240,
 			label = L["Wily Sycophant"],
 		},]]
 		-- The Nighthold: Seeds of Destruction
 		[57114732] = {
-			level = 4, 
+			dungeonLevel = 4, 
 			quest = 44939,
 			npc = 115853,
 			label = L["Doomlash"],
 		},
 		-- The Nighthold: Supply Routes
 		[19655976] = {
-			level = 3, 
+			dungeonLevel = 3, 
 			quest = 44936,
 			npc = 116004,
 			label = L["Flightmaster Volnath <Flight Master>"],
 		},
 		-- The Nighthold: Wailing In The Night
 		[38944374] = {
-			level = 1, 
+			dungeonLevel = 1, 
 			quest = 44933,
 			npc = 115847,
 			label = L["Ariadne"],
@@ -642,21 +642,21 @@ DB.points = {
 	--[[
 		-- Tomb of Sargeras: Life After Death
 		[00000000] = { -- location unknown
-			level = 1, 
+			dungeonLevel = 1, 
 			quest = 46506,
 			npc = 120019,
 			label = L["Ryul the Fading"],
 		},
 		-- Tomb of Sargeras: Lost But Not Forgotten
 		[00000000] = { -- location unknown
-			level = 1, 
+			dungeonLevel = 1, 
 			quest = 46505,
 			npc = 120009,
 			label = L["Naisha"],
 		},
 		-- Tomb of Sargeras: The Dread Stalker
 		[00000000] = { -- location unknown
-			level = 1, 
+			dungeonLevel = 1, 
 			quest = 46507,
 			npc = 120013,
 			label = L["The Dread Stalker"],
@@ -668,19 +668,19 @@ DB.points = {
 	},
 	[mapFile(1045)] = { -- Vault of the Wardens
 		[69087682] = {
-			level = 1,
+			dungeonLevel = 1,
 			type = "portal",
 			label = L["Portal"],
 		},
 		[46631642] = {
-			level = 2,
+			dungeonLevel = 2,
 			quest = 39341,
 			npc = 105824,
 			label = L["Grimoira <Devourer of Entrails>"],
 			note = L["Requires Skaggldrynk"],
 		},
 		[54633548] = {
-			level = 3,
+			dungeonLevel = 3,
 			quest = 44486,
 			object = 258979,
 			type = "yellowButton",
@@ -689,7 +689,7 @@ DB.points = {
 		-- Vault of the Wardens: A Grim Matter; items collecting
 		-- Vault of the Wardens: How'd He Get Up There?
 		[24282694] = {
-			level = 1, 
+			dungeonLevel = 1, 
 			quest = 42926,
 			npc = 96579,
 			label = L["Frenzied Animus <Vortex, Arcane Enchanted, Dampening, Mortar, Lightning Enchanted>"],

@@ -3,6 +3,13 @@ $Id$
 Revision History:
 =================
 
+* v1.06 (May 14, 2017)
+-----------------------
+- Replaced UIDropDown with NoTaint_UIDropDown
+- Revised iter function to return dungeonLevel value
+- Localization update:
+  - Simplified Chinese
+
 * v1.05 (May 01, 2017)
 -----------------------
 - Localization update:

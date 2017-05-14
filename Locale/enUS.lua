@@ -56,5 +56,5 @@ L["Echoing Horn of the Damned"] = "Echoing Horn of the Damned"
 -- Vault of the Wardens
 L["Requires Skaggldrynk"] = "Requires Skaggldrynk"
 --@end-do-not-package@
---@localization(locale="enUS", format="lua_additive_table")@
+--@localization(locale="enUS", format="lua_additive_table", handle-subnamespaces="none", handle-unlocalized="ignore", namespace="")@
 end

@@ -24,12 +24,12 @@ local AceDB = LibStub("AceDB-3.0")
 
 local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes")
 local addon = LibStub("AceAddon-3.0"):NewAddon(private.addon_name, "AceEvent-3.0")
-addon.constants = private.constants;
-addon.constants.addon_name = private.addon_name;
+addon.constants = private.constants
+addon.constants.addon_name = private.addon_name
 
-addon.descName = L["HandyNotes - Legion Instance World Quests"]
-addon.description = L["Shows the World Quest related rare bosses' locations and quests in Legion instances."]
-addon.pluginName = L["Legion Instance World Quests"]
+addon.descName 		= private.descName
+addon.description 	= private.description
+addon.pluginName 	= private.pluginName
 
 addon.Name = FOLDER_NAME;
 _G.HandyNotes_LegionInstanceWorldQuests = addon;
@@ -87,7 +87,7 @@ local get_point_info = function(point)
 		local label = point.label or UNKNOWN
 		local icon = work_out_texture(point)
 
-		return label, icon, point.scale
+		return label, icon, point.scale, point.alpha, point.dungeonLevel
 	end
 end
 
@@ -191,10 +191,10 @@ local handle_tooltip_by_coord = function(tooltip, mapFile, coord)
 end
 
 -- //////////////////////////////////////////////////////////////////////////
-local pluginHandler = {}
+local PluginHandler = {}
 local info = {}
 
-function pluginHandler:OnEnter(mapFile, coord)
+function PluginHandler:OnEnter(mapFile, coord)
 	local tooltip = self:GetParent() == WorldMapButton and WorldMapTooltip or GameTooltip
 	if ( self:GetCenter() > UIParent:GetCenter() ) then -- compare X coordinate
 		tooltip:SetOwner(self, "ANCHOR_LEFT")
@@ -204,7 +204,7 @@ function pluginHandler:OnEnter(mapFile, coord)
 	handle_tooltip_by_coord(tooltip, mapFile, coord)
 end
 
-function pluginHandler:OnLeave(mapFile, coord)
+function PluginHandler:OnLeave(mapFile, coord)
 	if self:GetParent() == WorldMapButton then
 		WorldMapTooltip:Hide()
 	else
@@ -218,7 +218,7 @@ local function hideNode(button, mapFile, coord)
 end
 
 local function closeAllDropdowns()
-	CloseDropDownMenus(1)
+	Lib_CloseDropDownMenus(1)
 end
 
 local function addTomTomWaypoint(button, mapFile, coord)
@@ -238,52 +238,51 @@ do
 	local currentZone, currentCoord
 	local function generateMenu(button, level)
 		if (not level) then return end
-		wipe(info)
 		if (level == 1) then
 			-- Create the title of the menu
-			info.isTitle	  = 1
-			info.text		 = "HandyNotes - " ..L["PLUGIN_NAME"]
-			info.notCheckable = 1
-			UIDropDownMenu_AddButton(info, level)
-			wipe(info)
+			info = Lib_UIDropDownMenu_CreateInfo()
+			info.isTitle 		= 1
+			info.text 		= "HandyNotes - " ..L["PLUGIN_NAME"]
+			info.notCheckable 	= 1
+			Lib_UIDropDownMenu_AddButton(info, level)
 
 			if TomTom then
 				-- Waypoint menu item
+				info = Lib_UIDropDownMenu_CreateInfo()
 				info.text = LH["Add this location to TomTom waypoints"]
 				info.notCheckable = 1
 				info.func = addTomTomWaypoint
 				info.arg1 = currentZone
 				info.arg2 = currentCoord
-				UIDropDownMenu_AddButton(info, level)
-				wipe(info)
+				Lib_UIDropDownMenu_AddButton(info, level)
 			end
 
 			 -- Hide menu item
+			info = Lib_UIDropDownMenu_CreateInfo()
 			info.text		 = HIDE 
 			info.notCheckable = 1
 			info.func		 = hideNode
 			info.arg1		 = currentZone
 			info.arg2		 = currentCoord
-			UIDropDownMenu_AddButton(info, level)
-			wipe(info)
+			Lib_UIDropDownMenu_AddButton(info, level)
 
 			-- Close menu item
+			info = Lib_UIDropDownMenu_CreateInfo()
 			info.text		 = CLOSE
 			info.func		 = closeAllDropdowns
 			info.notCheckable = 1
-			UIDropDownMenu_AddButton(info, level)
-			wipe(info)
+			Lib_UIDropDownMenu_AddButton(info, level)
 		end
 	end
 	local HL_Dropdown = CreateFrame("Frame", private.addon_name.."DropdownMenu")
 	HL_Dropdown.displayMode = "MENU"
 	HL_Dropdown.initialize = generateMenu
 
-	function pluginHandler:OnClick(button, down, mapFile, coord)
+	function PluginHandler:OnClick(button, down, mapFile, coord)
 		if button == "RightButton" and not down then
 			currentZone = string.gsub(mapFile, "_terrain%d+$", "")
 			currentCoord = coord
-			ToggleDropDownMenu(1, nil, HL_Dropdown, self, 0, 0)
+			Lib_ToggleDropDownMenu(1, nil, HL_Dropdown, self, 0, 0)
 		end
 	end
 end
@@ -296,29 +295,30 @@ do
 		local state, value = next(t, prestate)
 		while state do -- Have we reached the end of this zone?
 			if value and private:ShouldShow(state, value, currentZone, currentLevel) then
-				local label, icon, scale = get_point_info(value)
+				local label, icon, scale, alpha, dungeonLevel = get_point_info(value)
 				scale = (scale or 1) * (icon and icon.scale or 1) * private.db.icon_scale
-				return state, nil, icon, scale, private.db.icon_alpha
+				alpha = (alpha or 1) * (icon and icon.alpha or 1) * private.db.icon_alpha
+				return state, nil, icon, scale, alpha, dungeonLevel or 0
 			end
 			state, value = next(t, state) -- Get next data
 		end
-		return nil, nil, nil, nil
+		return nil, nil, nil, nil, nil, nil
 	end
-	function pluginHandler:GetNodes(mapFile, minimap, dungeonLevel)
-		currentLevel = dungeonLevel
+	function PluginHandler:GetNodes(mapFile, minimap, level)
+		currentLevel = level
 		mapFile = string.gsub(mapFile, "_terrain%d+$", "")
 		currentZone = mapFile
 		return iter, private.DB.points[mapFile], nil
 	end
 	function private:ShouldShow(coord, point, currentZone, currentLevel)
-		if private.hidden[currentZone] and private.hidden[currentZone][coord] then
+		if (private.hidden[currentZone] and private.hidden[currentZone][coord]) then
 			return false
 		end
-		if point.level and point.level ~= currentLevel then
+		if (point.dungeonLevel and point.dungeonLevel ~= currentLevel) then
 			return false
 		end
 		-- this will check if any node is for specific class
-		if point.class and point.class ~= select(2, UnitClass("player")) then
+		if (point.class and point.class ~= select(2, UnitClass("player"))) then
 			return false
 		end
 		return true
@@ -333,7 +333,7 @@ function addon:OnInitialize()
 	private.hidden = self.db.char.hidden
 
 	-- Initialize database with HandyNotes
-	HandyNotes:RegisterPluginDB(addon.pluginName, pluginHandler, private.config.options)
+	HandyNotes:RegisterPluginDB(addon.pluginName, PluginHandler, private.config.options)
 end
 
 function addon:OnEnable()
