@@ -3,6 +3,11 @@ $Id$
 Revision History:
 =================
 
+* v1.07 (May 20, 2017)
+-----------------------
+- Lib update:
+  - NoTaint_UIDropDownMenu
+
 * v1.06 (May 14, 2017)
 -----------------------
 - Replaced UIDropDown with NoTaint_UIDropDown
