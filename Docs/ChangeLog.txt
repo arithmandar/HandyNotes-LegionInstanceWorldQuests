@@ -3,6 +3,12 @@ $Id$
 Revision History:
 =================
 
+* v1.08 (May 24, 2017)
+-----------------------
+- Lib update:
+  - Replace NoTaint_UIDropDownMenu with LibUIDropDownMenu
+- Enhanced dropdown menu's behavior when world map is changed or closed
+
 * v1.07 (May 20, 2017)
 -----------------------
 - Lib update:

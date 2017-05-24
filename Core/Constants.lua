@@ -50,3 +50,7 @@ constants.icon_texture = {
 
 -- Define the default icon here
 constants.defaultIcon = constants.icon_texture["skull"]
+
+constants.events = {
+	"CLOSE_WORLD_MAP",
+};

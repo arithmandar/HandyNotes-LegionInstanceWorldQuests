@@ -6,6 +6,10 @@ manual-changelog:
     
 enable-nolib-creation: yes
 
+externals:
+    Libs/LibUIDropDownMenu: 
+        url: https://repos.wowace.com/wow/libuidropdownmenu/trunk/LibUIDropDownMenu
+
 ignore:
     - Images/PSD
-
+    - Libs/NoTaint_UIDropDownMenu
