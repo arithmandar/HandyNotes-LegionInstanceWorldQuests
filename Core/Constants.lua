@@ -52,5 +52,5 @@ constants.icon_texture = {
 constants.defaultIcon = constants.icon_texture["skull"]
 
 constants.events = {
-	"CLOSE_WORLD_MAP",
-};
+--	"CLOSE_WORLD_MAP",
+}
