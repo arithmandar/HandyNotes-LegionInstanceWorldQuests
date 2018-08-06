@@ -37,7 +37,7 @@
 ## Author: arith
 ## Version: @project-version@
 ## RequiredDeps: HandyNotes
-## OptionalDeps: !LibUIDropDownMenu
+## OptionalDeps: 
 ## DefaultState: enabled
 ## SavedVariables: HandyNotes_LegionInstanceWorldQuestsDB
 ## X-Date: @project-date-iso@

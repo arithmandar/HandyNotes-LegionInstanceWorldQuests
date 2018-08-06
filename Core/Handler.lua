@@ -5,10 +5,11 @@
 -- Functions
 local _G = getfenv(0)
 -- Libraries
-local string = _G.string;
+local string = _G.string
 local format, gsub = string.format, string.gsub
 local next, wipe, pairs, select, type = next, wipe, pairs, select, type
 local GameTooltip, WorldMapTooltip, GetSpellInfo, CreateFrame, UnitClass = _G.GameTooltip, _G.WorldMapTooltip, _G.GetSpellInfo, _G.CreateFrame, _G.UnitClass
+local UIDropDownMenu_CreateInfo, CloseDropDownMenus, UIDropDownMenu_AddButton, ToggleDropDownMenu = _G.UIDropDownMenu_CreateInfo, _G.CloseDropDownMenus, _G.UIDropDownMenu_AddButton, _G.ToggleDropDownMenu
 
 -- ----------------------------------------------------------------------------
 -- AddOn namespace.
@@ -214,13 +215,13 @@ local function hideNode(button, uMapID, coord)
 end
 
 local function closeAllDropdowns()
-	L_CloseDropDownMenus(1)
+	CloseDropDownMenus(1)
 end
 
 local function addTomTomWaypoint(button, uMapID, coord)
 	if TomTom then
 		local x, y = HandyNotes:getXY(coord)
-		TomTom:AddMFWaypoint(uMapID, x, y, {
+		TomTom:AddWaypoint(uMapID, x, y, {
 			title = get_point_info_by_coord(uMapID, coord),
 			persistent = nil,
 			minimap = true,
@@ -236,38 +237,38 @@ do
 		if (not level) then return end
 		if (level == 1) then
 			-- Create the title of the menu
-			info = L_UIDropDownMenu_CreateInfo()
+			info = UIDropDownMenu_CreateInfo()
 			info.isTitle 		= true
 			info.text 		= "HandyNotes - " ..addon.pluginName
 			info.notCheckable 	= true
-			L_UIDropDownMenu_AddButton(info, level)
+			UIDropDownMenu_AddButton(info, level)
 
 			if TomTom then
 				-- Waypoint menu item
-				info = L_UIDropDownMenu_CreateInfo()
+				info = UIDropDownMenu_CreateInfo()
 				info.text = LH["Add this location to TomTom waypoints"]
 				info.notCheckable = true
 				info.func = addTomTomWaypoint
 				info.arg1 = currentMapID
 				info.arg2 = currentCoord
-				L_UIDropDownMenu_AddButton(info, level)
+				UIDropDownMenu_AddButton(info, level)
 			end
 
 			-- Hide menu item
-			info = L_UIDropDownMenu_CreateInfo()
+			info = UIDropDownMenu_CreateInfo()
 			info.text		= HIDE 
 			info.notCheckable 	= true
 			info.func		= hideNode
 			info.arg1		= currentMapID
 			info.arg2		= currentCoord
-			L_UIDropDownMenu_AddButton(info, level)
+			UIDropDownMenu_AddButton(info, level)
 
 			-- Close menu item
-			info = L_UIDropDownMenu_CreateInfo()
+			info = UIDropDownMenu_CreateInfo()
 			info.text		= CLOSE
 			info.func		= closeAllDropdowns
 			info.notCheckable 	= true
-			L_UIDropDownMenu_AddButton(info, level)
+			UIDropDownMenu_AddButton(info, level)
 		end
 	end
 	local HL_Dropdown = CreateFrame("Frame", private.addon_name.."DropdownMenu")
@@ -278,7 +279,7 @@ do
 		if (button == "RightButton" and not down) then
 			currentMapID = uMapID
 			currentCoord = coord
-			L_ToggleDropDownMenu(1, nil, HL_Dropdown, self, 0, 0)
+			ToggleDropDownMenu(1, nil, HL_Dropdown, self, 0, 0)
 		end
 	end
 end

@@ -24,7 +24,7 @@ private.DB = DB
 
 DB.points = {
 	--[[ structure:
-	[mapFile] = { -- "_terrain1" etc will be stripped from attempts to fetch this
+	[mapID] = { -- "_terrain1" etc will be stripped from attempts to fetch this
 		[coord] = {
 			quest=[number],		-- quest ID if available
 			dungeonLevel=[number], 	-- dungeondungeonLevel if needed
