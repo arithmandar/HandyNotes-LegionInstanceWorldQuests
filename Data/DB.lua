@@ -585,9 +585,11 @@ DB.points = {
 			label = L["Sludge Face"],
 		},
 		-- The Arcway: Creeping Suspicions
+			-- several locations
+			-- quest=43640,
 		-- The Arcway: Silver Serpent
 		[48004236] = {
-			quest = 43640,
+			quest = 43638,
 			npc = 111052,
 			label = L["Silver Serpent"],
 		},

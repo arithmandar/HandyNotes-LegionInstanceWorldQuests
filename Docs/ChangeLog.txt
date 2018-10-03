@@ -3,6 +3,10 @@ $Id$
 Revision History:
 =================
 
+* v1.16 (Oct. 03, 2018)
+-----------------------
+- Fixed quest ID of The Arcway: Silver Serpent
+
 * v1.15 (Aug. 07, 2018)
 -----------------------
 - Fixed .pkgmeta
