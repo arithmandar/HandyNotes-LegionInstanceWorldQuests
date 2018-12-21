@@ -3,6 +3,10 @@ $Id$
 Revision History:
 =================
 
+* v1.17 (Dec. 21, 2018)
+-----------------------
+- Toc update to support WoW 8.1.0
+
 * v1.16 (Oct. 03, 2018)
 -----------------------
 - Fixed quest ID of The Arcway: Silver Serpent
