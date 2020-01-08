@@ -3,6 +3,10 @@ $Id$
 Revision History:
 =================
 
+* v1.19 (Jan. 09, 2020)
+-----------------------
+- Toc update to support WoW 8.2.5
+
 * v1.18 (Sep. 03, 2019)
 -----------------------
 - Toc update to support WoW 8.2.0
