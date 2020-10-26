@@ -6,11 +6,14 @@ manual-changelog:
     
 enable-nolib-creation: yes
 
-#externals:
-#    Libs/LibUIDropDownMenu: 
-#        url: https://repos.wowace.com/wow/libuidropdownmenu/trunk/LibUIDropDownMenu
+externals:
+    Libs-release/LibUIDropDownMenu: 
+        url: https://repos.wowace.com/wow/libuidropdownmenu/trunk/LibUIDropDownMenu
 
+move-folders:
+    HandyNotes_LegionInstanceWorldQuests/Libs: HandyNotes_LegionInstanceWorldQuests/Libs-dev
+    HandyNotes_LegionInstanceWorldQuests/Libs-release: HandyNotes_LegionInstanceWorldQuests/Libs
 ignore:
     - Images/PSD
-    - Libs/NoTaint_UIDropDownMenu
-    - Libs/LibUIDropDownMenu
+    - Libs-dev
+
