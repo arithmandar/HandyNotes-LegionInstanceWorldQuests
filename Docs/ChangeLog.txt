@@ -3,6 +3,10 @@ $Id$
 Revision History:
 =================
 
+* v1.26 (Jun. 14, 2021)
+-----------------------
+- Library update - LibCurrency
+
 * v1.25 (May 19, 2021)
 -----------------------
 - Toc update to support WoW 9.0.5
