@@ -3,6 +3,10 @@ $Id$
 Revision History:
 =================
 
+* v1.38 (Sep. 23, 2026)
+-----------------------
+- Update GetItemInfo API function call
+
 * v1.37 (Sep. 23, 2026)
 -----------------------
 - Update to support WoW 12.1.0

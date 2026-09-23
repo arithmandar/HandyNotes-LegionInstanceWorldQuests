@@ -8,13 +8,14 @@ local _G = getfenv(0)
 local string = _G.string
 local format, gsub = string.format, string.gsub
 local next, wipe, pairs, select, type = next, wipe, pairs, select, type
-local C_Spell, C_QuestLog = _G.C_Spell, _G.C_QuestLog
+local C_Spell, C_QuestLog, C_Item = _G.C_Spell, _G.C_QuestLog, _G.C_Item
 local GameTooltip, GetSpellInfo, CreateFrame, UnitClass = _G.GameTooltip, C_Spell.GetSpellInfo, _G.CreateFrame, _G.UnitClass
+local IsQuestFlaggedCompleted = C_QuestLog.IsQuestFlaggedCompleted
+local GetTitleForQuestID = C_QuestLog.GetTitleForQuestID
+local GetItemInfo = C_Item.GetItemInfo
 --local UIDropDownMenu_CreateInfo, CloseDropDownMenus, UIDropDownMenu_AddButton, ToggleDropDownMenu = L_UIDropDownMenu_CreateInfo, L_CloseDropDownMenus, L_UIDropDownMenu_AddButton, L_ToggleDropDownMenu
 
 local WorldMapTooltip = GameTooltip
-local IsQuestFlaggedCompleted = C_QuestLog.IsQuestFlaggedCompleted
-local GetTitleForQuestID = C_QuestLog.GetTitleForQuestID
 
 -- ----------------------------------------------------------------------------
 -- AddOn namespace.
