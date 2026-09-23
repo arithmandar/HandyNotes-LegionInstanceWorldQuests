@@ -119,9 +119,9 @@ local function handle_tooltip(tooltip, point)
 			end
 		end
 		if (point.spell) then
-			local spellName = GetSpellInfo(point.spell)
-			if (spellName) then
-				tooltip:AddLine(spellName, 1, 1, 1, true)
+			local spellinofo = GetSpellInfo(point.spell)
+			if (spellinofo and spellinofo.name) then
+				tooltip:AddLine(spellinofo.name, 1, 1, 1, true)
 			end
 		end
 		if (point.achievement) then

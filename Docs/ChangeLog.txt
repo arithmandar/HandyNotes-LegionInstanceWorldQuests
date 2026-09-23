@@ -3,6 +3,10 @@ $Id$
 Revision History:
 =================
 
+* v1.39 (Sep. 23, 2026)
+-----------------------
+- Fixed SpellInfo's function call and now we can correctly retrieve spell information
+
 * v1.38 (Sep. 23, 2026)
 -----------------------
 - Update GetItemInfo API function call
