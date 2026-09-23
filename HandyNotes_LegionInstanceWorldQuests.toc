@@ -1,39 +1,26 @@
-﻿## Interface: 100007
-#@non-debug@
-## Title: @localization(locale="enUS", key="Title", namespace="ToC")@
-## Title-deDE: @localization(locale="deDE", key="Title", namespace="ToC")@
-## Title-esES: @localization(locale="esES", key="Title", namespace="ToC")@
-## Title-esMX: @localization(locale="esMX", key="Title", namespace="ToC")@
-## Title-frFR: @localization(locale="frFR", key="Title", namespace="ToC")@
-## Title-itIT: @localization(locale="itIT", key="Title", namespace="ToC")@
-## Title-koKR: @localization(locale="koKR", key="Title", namespace="ToC")@
-## Title-ptBR: @localization(locale="ptBR", key="Title", namespace="ToC")@
-## Title-ruRU: @localization(locale="ruRU", key="Title", namespace="ToC")@
-## Title-zhCN: @localization(locale="zhCN", key="Title", namespace="ToC")@
-## Title-zhTW: @localization(locale="zhTW", key="Title", namespace="ToC")@
-## Notes: @localization(locale="enUS", key="Description", namespace="ToC")@
-## Notes-deDE: @localization(locale="deDE", key="Description", namespace="ToC")@
-## Notes-esES: @localization(locale="esES", key="Description", namespace="ToC")@
-## Notes-esMX: @localization(locale="esMX", key="Description", namespace="ToC")@
-## Notes-frFR: @localization(locale="frFR", key="Description", namespace="ToC")@
-## Notes-itIT: @localization(locale="itIT", key="Description", namespace="ToC")@
-## Notes-koKR: @localization(locale="koKR", key="Description", namespace="ToC")@
-## Notes-ptBR: @localization(locale="ptBR", key="Description", namespace="ToC")@
-## Notes-ruRU: @localization(locale="ruRU", key="Description", namespace="ToC")@
-## Notes-zhCN: @localization(locale="zhCN", key="Description", namespace="ToC")@
-## Notes-zhTW: @localization(locale="zhTW", key="Description", namespace="ToC")@
-#@end-non-debug@
-#@debug@
+﻿## Interface: 120100
 ## Title: HandyNotes - Legion Instance World Quests
+## Notes: Shows the locations of rare bosses and World Quests in Legion instances
+## Title-deDE: HandyNotes – Weltquests in Legion-Instanzen
+## Notes-deDE: Zeigt die Standorte seltener Gegner und Weltquests in Legion-Instanzen an
+## Title-esES: HandyNotes: Misiones del mundo en instancias de Legion
+## Notes-esES: Muestra las ubicaciones de enemigos raros y misiones del mundo en las instancias de Legion
+## Title-esMX: HandyNotes: Misiones de mundo en instancias de Legion
+## Notes-esMX: Muestra las ubicaciones de enemigos raros y misiones de mundo en las instancias de Legion
+## Title-frFR: HandyNotes – Expéditions en instances de Legion
+## Notes-frFR: Affiche l’emplacement des monstres rares et des expéditions dans les instances de Legion
+## Title-itIT: HandyNotes - Missioni mondiali nelle istanze di Legion
+## Notes-itIT: Mostra le posizioni dei nemici rari e delle missioni mondiali nelle istanze di Legion
 ## Title-koKR: HandyNotes - 군단 인스턴스 전역 퀘스트
-## Title-ruRU: HandyNotes - Локальные задания подземелий Легиона
+## Notes-koKR: 군단 인스턴스의 희귀 우두머리와 전역 퀘스트 위치를 표시합니다
+## Title-ptBR: HandyNotes - Missões mundiais em masmorras de Legion
+## Notes-ptBR: Mostra as localizações de inimigos raros e missões mundiais nas masmorras de Legion
+## Title-ruRU: HandyNotes — Локальные задания в подземельях Legion
+## Notes-ruRU: Показывает расположение редких боссов и локальных заданий в подземельях Legion
+## Title-zhCN: HandyNotes - 军团再临副本世界任务
+## Notes-zhCN: 显示军团再临副本中稀有首领和世界任务的位置
 ## Title-zhTW: HandyNotes - 軍臨天下副本世界任務
-## Notes: Shows the World Quest related rare bosses' locations and quests in Legion instances
-## Notes-deDE: Zeigt die Positionen von weltquestbezogenen seltenenen Bossen und Quests in Legion-Instanzen
-## Notes-koKR: 군단 인스턴스에서 전역 퀘스트 관련 희귀 우두머리의 위치와 퀘스트를 표시합니다
-## Notes-ruRU: Показывает местоположения локальных заданий, редких боссов и задания, в подземельях Легиона
-## Notes-zhTW: 顯示軍臨天下副本裡的世界任務相關稀有菁英位置與任務的資訊
-#@end-debug@
+## Notes-zhTW: 顯示軍臨天下副本中稀有首領和世界任務的位置
 ## Author: arith
 ## Version: @project-version@
 ## RequiredDeps: HandyNotes
@@ -43,6 +30,18 @@
 ## X-Date: @project-date-iso@
 ## X-License: GPLv2
 ## X-Category: Map
+## Category: Map
+## Category-deDE: Karte
+## Category-esES: Mapa
+## Category-esMX: Mapa
+## Category-frFR: Carte
+## Category-itIT: Mappa
+## Category-koKR: 지도
+## Category-ptBR: Mapa
+## Category-ruRU: Карта
+## Category-zhCN: 地图
+## Category-zhTW: 地圖
+## IconTexture: Interface\icons\Achievement_dungeon_tombofsargeras
 
 Libs\Libs.xml
 Locale\Locales.xml

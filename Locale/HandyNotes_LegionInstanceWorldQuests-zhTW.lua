@@ -1,11 +1,10 @@
-﻿-- $Id$
+-- $Id$
 
 local L = LibStub("AceLocale-3.0"):NewLocale("HandyNotes_LegionInstanceWorldQuests", "zhTW", false)
 
 if not L then return end
 
 if L then
---@do-not-package@
 -- //////////////////////////
 -- Addon
 -- //////////////////////////
@@ -53,9 +52,7 @@ L["Hastily-Scrawled Page"] = "飛快潦草的書頁"
 L["Fenryr's western spawn point"] = "芬里爾的西邊出現點"
 L["Fenryr's eastern spawn point"] = "芬里爾的東邊出現點"
 -- Maw of Souls
-L["Echoing Horn of the Damned"] = "遭譴者回音號角";
+L["Echoing Horn of the Damned"] = "遭譴者回音號角"
 -- Vault of the Wardens
 L["Requires Skaggldrynk"] = "需要斯卡格藥劑"
---@end-do-not-package@
---@localization(locale="zhTW", format="lua_additive_table", handle-subnamespaces="none", handle-unlocalized="ignore", namespace="")@
 end

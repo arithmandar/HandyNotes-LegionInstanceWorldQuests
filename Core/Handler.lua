@@ -8,11 +8,11 @@ local _G = getfenv(0)
 local string = _G.string
 local format, gsub = string.format, string.gsub
 local next, wipe, pairs, select, type = next, wipe, pairs, select, type
-local GameTooltip, GetSpellInfo, CreateFrame, UnitClass = _G.GameTooltip, _G.GetSpellInfo, _G.CreateFrame, _G.UnitClass
+local C_Spell, C_QuestLog = _G.C_Spell, _G.C_QuestLog
+local GameTooltip, GetSpellInfo, CreateFrame, UnitClass = _G.GameTooltip, C_Spell.GetSpellInfo, _G.CreateFrame, _G.UnitClass
 --local UIDropDownMenu_CreateInfo, CloseDropDownMenus, UIDropDownMenu_AddButton, ToggleDropDownMenu = L_UIDropDownMenu_CreateInfo, L_CloseDropDownMenus, L_UIDropDownMenu_AddButton, L_ToggleDropDownMenu
 
 local WorldMapTooltip = GameTooltip
-local C_QuestLog = C_QuestLog
 local IsQuestFlaggedCompleted = C_QuestLog.IsQuestFlaggedCompleted
 local GetTitleForQuestID = C_QuestLog.GetTitleForQuestID
 
@@ -42,26 +42,22 @@ _G.HandyNotes_LegionInstanceWorldQuests = addon
 local profile
 
 -- //////////////////////////////////////////////////////////////////////////
-local questTitle_cache
-local questComplete_cache
-
 -- activation code
 local function getQuestTitlebyID(id)
-	questTitle_cache = GetTitleForQuestID(id)
-	if not questTitle_cache then
-		questTitle_cache = GetTitleForQuestID(id)
-	end
+	local questTitle = GetTitleForQuestID(id)
+	return questTitle
 end
 -- //////////////////////////////////////////////////////////////////////////
 -- get creature's name from server
-local mcache_tooltip = CreateFrame("GameTooltip", private.addon_name.."_mcacheToolTip", UIParent, "GameTooltipTemplate")
-local creature_cache
-
--- activation code
+-- Resolve a localized creature name without relying on a hidden tooltip frame.
+-- Adopted codes by Anon_clever_blackwell3419476
 local function getCreatureNamebyID(id)
-	mcache_tooltip:SetOwner(UIParent, "ANCHOR_NONE")
-	mcache_tooltip:SetHyperlink(("unit:Creature-0-0-0-0-%d"):format(id))
-	creature_cache = _G[private.addon_name.."_mcacheToolTipTextLeft1"]:GetText()
+	local tooltipData = C_TooltipInfo.GetHyperlink(("unit:Creature-0-0-0-0-%d"):format(id))
+	local firstLine = tooltipData and tooltipData.lines and tooltipData.lines[1]
+	local name = firstLine and firstLine.leftText
+	if name and (not issecretvalue or not issecretvalue(name)) then
+		return name
+	end
 end
 -- //////////////////////////////////////////////////////////////////////////
 local function work_out_texture(point)
@@ -92,11 +88,10 @@ local function handle_tooltip(tooltip, point)
 	if point then
 		if (point.quest) then
 			if (profile.query_server) then
-				getQuestTitlebyID(point.quest)
-				if (questTitle_cache) then
---					tooltip:AddLine(QUESTS_COLON..questTitle_cache, 1, 1, 1)
+				local questTitle = getQuestTitlebyID(point.quest)
+				if (questTitle) then
+					tooltip:AddLine(QUESTS_COLON..questTitle, 1, 1, 1)
 					tooltip:SetHyperlink(("quest:%d[%%s]"):format(point.quest))
-					questTitle_cache = nil
 				end
 			end
 			tooltip:AddDoubleLine(L["QuestID"], point.quest or UNKNOWN, 0.5, 0.5, 1, 0.5, 0.5, 1)
@@ -106,9 +101,8 @@ local function handle_tooltip(tooltip, point)
 		end
 		if (point.label and not point.item) then -- skip when item ID is available, this is because we can get item's localized name so we don't need to use the lable
 			if (point.npc and profile.query_server) then
-				getCreatureNamebyID(point.npc)
-				tooltip:AddLine(creature_cache or point.label)
-				creature_cache = nil
+				local creatureName = getCreatureNamebyID(point.npc)
+				tooltip:AddLine(creatureName or point.label)
 			else
 				tooltip:AddLine(point.label)
 			end

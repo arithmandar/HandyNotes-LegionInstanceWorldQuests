@@ -4,7 +4,6 @@ local AceLocale = LibStub:GetLibrary("AceLocale-3.0");
 local L = AceLocale:NewLocale("HandyNotes_LegionInstanceWorldQuests", "enUS", true, true);
 
 if L then
---@do-not-package@
 -- //////////////////////////
 -- Addon
 -- //////////////////////////
@@ -55,6 +54,4 @@ L["Fenryr's eastern spawn point"] = "Fenryr's eastern spawn point"
 L["Echoing Horn of the Damned"] = "Echoing Horn of the Damned"
 -- Vault of the Wardens
 L["Requires Skaggldrynk"] = "Requires Skaggldrynk"
---@end-do-not-package@
---@localization(locale="enUS", format="lua_additive_table", handle-subnamespaces="none", handle-unlocalized="ignore", namespace="")@
 end
