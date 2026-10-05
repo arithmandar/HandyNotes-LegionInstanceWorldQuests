@@ -1,10 +1,9 @@
--- $Id$
 -----------------------------------------------------------------------
 -- Upvalued Lua API.
 -----------------------------------------------------------------------
 -- Functions
 local _G = getfenv(0)
-local pairs = _G.pairs;
+local pairs = _G.pairs
 -- Libraries
 -- ----------------------------------------------------------------------------
 -- AddOn namespace.
@@ -13,10 +12,6 @@ local FOLDER_NAME, private = ...
 local LibStub = _G.LibStub
 local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes")
 local L = LibStub("AceLocale-3.0"):GetLocale(private.addon_name);
-
-local function mapFile(mapID)
-	return HandyNotes:GetMapIDtoMapFile(mapID)
-end
 
 local DB = {}
 

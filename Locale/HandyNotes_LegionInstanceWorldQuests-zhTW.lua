@@ -1,4 +1,5 @@
--- $Id$
+local _G = getfenv(0)
+local LibStub = _G.LibStub
 
 local L = LibStub("AceLocale-3.0"):NewLocale("HandyNotes_LegionInstanceWorldQuests", "zhTW", false)
 
@@ -16,30 +17,30 @@ L["Shows the World Quest related rare bosses' locations and quests in Legion ins
 -- Configs
 -- //////////////////////////
 -- Icon Settings
-L["These settings control the look and feel of the icon."] = "以下的設定控制了圖示的外觀及風格。"
+L["These settings control the look and feel of the icon."] = "這些設定控制圖示的外觀與顯示效果。"
 L["Icon settings"] = "圖示設定"
-L["Icon Scale"] = "圖示大小"
-L["The scale of the icons"] = "圖示的大小"
+L["Icon Scale"] = "圖示縮放"
+L["The scale of the icons"] = "圖示的縮放比例"
 L["Icon Alpha"] = "圖示透明度"
 L["The alpha transparency of the icons"] = "圖示的透明度"
 -- What to Display
-L["What to display"] = "哪些要被呈現"
-L["These settings control what type of icons to be displayed."] = "以下的設定控制了哪些類型的節點要被顯示。"
+L["What to display"] = "顯示內容"
+L["These settings control what type of icons to be displayed."] = "這些設定控制世界地圖和小地圖上要顯示哪些類型的圖示。"
 -- AddOn Settings
 L["AddOn Settings"] = "插件設定"
-L["Query from server"] = "從伺服器查詢名稱"
-L["Send query request to server to lookup localized name. May be a little bit slower for the first time lookup but would be very fast once the name is found and cached."] = "向伺服器送出查詢本地化名稱的請求。首次查詢名稱時可能會顯示稍慢，一旦查詢到或該名稱已有快取時則會立即顯示。"
-L["Show note"] = "顯示說明"
-L["Show the node's additional notes when it's available."] = "當節點有額外說明時，同時顯示該說明"
-L["Reset hidden nodes"] = "重設所有被隱藏的節點"
-L["Show all nodes that you manually hid by right-clicking on them and choosing \"hide\"."] = "將您手動把 POI 設為隱藏的節點還原成全部都顯示。"
+L["Query from server"] = "從伺服器查詢"
+L["Send query request to server to lookup localized name. May be a little bit slower for the first time lookup but would be very fast once the name is found and cached."] = "向伺服器傳送查詢要求以查找本地化名稱。第一次查詢可能稍慢，但名稱找到並快取後會非常迅速。"
+L["Show note"] = "顯示備註"
+L["Show the node's additional notes when it's available."] = "可用時顯示節點的額外備註。"
+L["Reset hidden nodes"] = "重設隱藏的節點"
+L["Show all nodes that you manually hid by right-clicking on them and choosing \"hide\"."] = "顯示所有你以滑鼠右鍵點擊並選擇「隱藏」而手動隱藏的節點。"
 
 -- //////////////////////////
 -- Others
 -- //////////////////////////
 L["Entrance"] = "入口"
 L["Portal"] = "傳送門"
-L["QuestID"] = "任務代號"
+L["QuestID"] = "任務 ID"
 
 -- Black Rook Hold
 L["Torn Page"] = "撕開的書頁"
