@@ -1,4 +1,5 @@
-﻿-- $Id$
+﻿local _G = getfenv(0)
+local LibStub = _G.LibStub
 
 local AceLocale = LibStub:GetLibrary("AceLocale-3.0");
 local L = AceLocale:NewLocale("HandyNotes_LegionInstanceWorldQuests", "enUS", true, true);

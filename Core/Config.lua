@@ -1,4 +1,3 @@
--- $Id$
 -----------------------------------------------------------------------
 -- Upvalued Lua API.
 -----------------------------------------------------------------------
@@ -9,7 +8,7 @@ local pairs = _G.pairs
 -- ----------------------------------------------------------------------------
 -- AddOn namespace.
 -- ----------------------------------------------------------------------------
-local FOLDER_NAME, private = ...
+local _, private = ...
 local LibStub = _G.LibStub;
 local addon = LibStub("AceAddon-3.0"):GetAddon(private.addon_name)
 local L = LibStub("AceLocale-3.0"):GetLocale(private.addon_name);
@@ -90,7 +89,7 @@ config.options = {
 					name = L["Reset hidden nodes"],
 					desc = L["Show all nodes that you manually hid by right-clicking on them and choosing \"hide\"."],
 					func = function()
-						for map,coords in pairs(private.hidden) do
+						for _, coords in pairs(private.hidden) do
 							wipe(coords)
 						end
 						addon:Refresh()

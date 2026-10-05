@@ -6,14 +6,14 @@ manual-changelog:
     
 enable-nolib-creation: yes
 
-externals:
-    Libs-release/LibUIDropDownMenu: 
-        url: https://repos.wowace.com/wow/libuidropdownmenu/trunk/LibUIDropDownMenu
+# configs for WowInterface
+wowi-archive-previous: yes
+wowi-create-changelog: no
 
-move-folders:
-    HandyNotes_LegionInstanceWorldQuests/Libs: HandyNotes_LegionInstanceWorldQuests/Libs-dev
-    HandyNotes_LegionInstanceWorldQuests/Libs-release: HandyNotes_LegionInstanceWorldQuests/Libs
+externals:
+    Libs/LibUIDropDownMenu: 
+        url: https://repos.curseforge.com/wow/libuidropdownmenu/trunk/LibUIDropDownMenu
+
 ignore:
     - Images/PSD
-    - Libs-dev
 

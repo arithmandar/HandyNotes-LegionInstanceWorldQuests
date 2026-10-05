@@ -21,15 +21,6 @@
 ## Notes-zhCN: 显示军团再临副本中稀有首领和世界任务的位置
 ## Title-zhTW: HandyNotes - 軍臨天下副本世界任務
 ## Notes-zhTW: 顯示軍臨天下副本中稀有首領和世界任務的位置
-## Author: arith
-## Version: @project-version@
-## RequiredDeps: HandyNotes
-## OptionalDeps: !LibUIDropDownMenu
-## DefaultState: enabled
-## SavedVariables: HandyNotes_LegionInstanceWorldQuestsDB
-## X-Date: @project-date-iso@
-## X-License: GPLv2
-## X-Category: Map
 ## Category: Map
 ## Category-deDE: Karte
 ## Category-esES: Mapa
@@ -42,6 +33,18 @@
 ## Category-zhCN: 地图
 ## Category-zhTW: 地圖
 ## IconTexture: Interface\icons\Achievement_dungeon_tombofsargeras
+## Author: arith
+## Version: @project-version@
+## RequiredDeps: HandyNotes
+## OptionalDeps: !LibUIDropDownMenu
+## DefaultState: enabled
+## SavedVariables: HandyNotes_LegionInstanceWorldQuestsDB
+## X-Date: @project-date-iso@
+## X-License: GPLv2
+## X-Category: Map
+## X-Website: https://www.curseforge.com/wow/addons/handynotes-legion-instance-world-quests
+## X-Curse-Project-ID: 265563
+## X-WoWI-ID: 27242
 
 Libs\Libs.xml
 Locale\Locales.xml
