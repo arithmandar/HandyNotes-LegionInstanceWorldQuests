@@ -1,4 +1,4 @@
-﻿## Interface: 120100
+﻿## Interface: 120105
 ## Title: HandyNotes - Legion Instance World Quests
 ## Notes: Shows the locations of rare bosses and World Quests in Legion instances
 ## Title-deDE: HandyNotes – Weltquests in Legion-Instanzen

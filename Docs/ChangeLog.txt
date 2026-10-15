@@ -1,6 +1,10 @@
 Revision History:
 =================
 
+* v1.41 (Oct. 15, 2026)
+-----------------------
+- Toc update to support WoW 12.1.5
+
 * v1.40 (Oct. 06, 2026)
 -----------------------
 - Update all translations
